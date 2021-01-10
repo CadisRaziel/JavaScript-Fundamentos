@@ -1,0 +1,17 @@
+var a = 3
+
+// let é uma varaivel mais moderna no Javascript, e melhor usar elas do que o var.
+// o let não pode ser usado com o mesmo nome(como no php)
+// ja o var pode(como no php)
+let b = 4 
+
+
+var a = 30
+let b = 40
+
+console.log(a,b)
+//aqui o var a vai ser mostrado, porém o let não pois tem dois let "b"
+
+const c = 50
+console.log(c)
+// no java é mais interesante por constantes(evite colocar variaveis para ficar alterando o programa)
