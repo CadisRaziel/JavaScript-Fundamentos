@@ -1,0 +1,24 @@
+// javascrit é fracamente tipada
+// ou seja em nenhum momento voce estará definindo variaveis ou constantes como INT, STRING etc...
+// sera sempre exemplo var a = 20 ou let b = 20
+// observação: ou seja temos que tomar cuidado pois quando der um erro vamos ter que observar bem pois não estara tipado
+
+//exemplo 
+
+let qualquer = 'legal';
+console.log(qualquer)
+console.log(typeof qualquer) // typeof = para mostrar o que é(tipo se é string, database, constante, inteiro...)
+
+qualquer = 3.155
+console.log(qualquer)
+console.log(typeof qualquer)
+
+//note que é a mesma variavel "qualquer" e ela pode ter multiplos valores como string e depois ela mesmo com int
+
+//evites colocar nomes genericos para variaveis ou simbolos
+//exemplo 
+let valor = ''
+let numero = 1
+let pqp = false //Produto Quimico Perigoso
+
+// a escolha de bons nomes de variaveis no java é essencial 
