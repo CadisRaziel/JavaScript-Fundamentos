@@ -8,6 +8,7 @@ console.log(escola.indexOf('3')) // indexOf para saber em que indice esta a letr
 console.log(escola.substring(1)) // para mostrar a palavra do indice 1 para frente ou seja "od3r"
 console.log(escola.substring(0, 3)) // para mostrar do indice 0 até o indice 3(porém o 3 não vai aparecer) ou seja "Cod"
 console.log('Escola '.concat(escola).concat("!")) //concat para concatenar 
+console.log('Escola ' + escola + "!") // forma mais comum de concatenar ! 
 console.log(escola.replace(3, 'e')) // replace vai substituir palavras ou numeros ou seja vai trocar o 3 por "e"
 console.log(escola.replace(/\d/, 'b')) // /\d/ = substituia todos numeros pela letra b
 console.log(escola.replace(/\w/g, 'e')) // /\d/g = susbistituir toda frase por 'e'
