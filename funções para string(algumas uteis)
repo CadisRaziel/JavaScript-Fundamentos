@@ -1,0 +1,14 @@
+// como no php se a stirng começa com '' termine tudo com ''
+// caso a string comece com "" termine tudo com ""
+
+const escola = "Cod3r"
+console.log(escola.charAt(4)) // charAt para retornar o caracterer a partir de um indice ("4" que vai ser o R)
+console.log(escola.charCodeAt(3)) // charCodeAt para retornar o caracter de indice "3" mas como tabela "ascii table ou unicode table"
+console.log(escola.indexOf('3')) // indexOf para saber em que indice esta a letra ou digito 
+console.log(escola.substring(1)) // para mostrar a palavra do indice 1 para frente ou seja "od3r"
+console.log(escola.substring(0, 3)) // para mostrar do indice 0 até o indice 3(porém o 3 não vai aparecer) ou seja "Cod"
+console.log('Escola '.concat(escola).concat("!")) //concat para concatenar 
+console.log(escola.replace(3, 'e')) // replace vai substituir palavras ou numeros ou seja vai trocar o 3 por "e"
+console.log(escola.replace(/\d/, 'b')) // /\d/ = substituia todos numeros pela letra b
+console.log(escola.replace(/\w/g, 'e')) // /\d/g = susbistituir toda frase por 'e'
+console.log('Ana,Maria,Pedro'.split(',')) // split ',' para gerar um Array
