@@ -1,0 +1,49 @@
+//geralmente o false e true é 1 e 0
+//no javascript podemos utilizar outras coisas alem do 1 e 0
+
+//sempre que for usar variaveis que forem alteradas use o LET
+
+
+let isAtivo = false
+console.log(false)
+
+isAtivo = true
+console.log(isAtivo)
+
+
+
+//convertendo o numero 1 em verdadeiro ou faso
+isAtivo = 1
+console.log(!!isAtivo) // !! = vai transformar em verdadeiro
+console.log(!isAtivo) // ! = vai transformar em false
+
+
+//situações que é requerido um verdadeiro ou falso
+console.log('os verdadeiross...')
+console.log(!!3)
+console.log(!!-1)
+console.log(!!'ola')
+console.log(!!' ')
+console.log(!![])
+console.log(!!{})
+console.log(!!Infinity)
+console.log(!!(isAtivo = true))
+
+//falsos
+console.log('os falsos....')
+console.log(!!0)
+console.log(!!'')
+console.log(!!null)
+console.log(!!NaN)
+console.log(!!undefined)
+console.log(!!(isAtivo = false))
+
+//dicas
+
+console.log('para finalizar...')
+console.log(!!('' || null || 0 || 'verdadeiro')) //pelo menos 1 sendo verdadeiro ele vai mostrar como verdadeiro !
+
+
+//se eu colocar uma string vazia ou se o usuario nao por nome vai apresentar o "desconhecido"
+let nome = '' //'' da falso então com o || ele pula pro proximo que é verdadeiro 'desconhecido'
+console.log(nome || 'Desconhecido')
