@@ -1,0 +1,34 @@
+const nome = 'rebeca'
+
+// Em uma concatenação simples eu não posso quebrar a linha como o exemplo acima
+// isso vai gerar um erro
+// veja no exemplo abaixo
+
+ const concatenacao = 'ola' + nome + '!' 
+
+
+
+
+// para usar template é necessario usar esse simbolo `` (SHIT + acento)
+
+// porém no template de string eu posso fazer essa quebra de linha
+// veja no exemplo abaixo
+
+const template = `
+    olé
+    ${nome}!`
+console.log(template)
+
+
+// expressoes matematicas com o template
+console.log(`1 + 1 = ${1+1}`) //o que estivrer entre {} ele vai tentar realizar
+// essa expressão acima vai apresentar 1 + 1 = 2
+
+
+
+//dentro do tamplete string podemos chamar uma função
+const up = texto => texto.toUpperCase()
+console.log(`ei...${up('cuidado')}!`)
+//o cuidado vai ser apresentado em maiuscular por ter sido definido como toUpperCase
+
+//90% das vezes vamos fazer o template para variaveis strings
