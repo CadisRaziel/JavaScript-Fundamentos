@@ -1,0 +1,32 @@
+ // OBJETOS 
+
+ const prod1 = {} // {} uma forma literal de criar um objeto {} um objeto vazio
+prod1.nome = 'Celular Ultra mega'
+prod1.preco = 4999.90
+prod1['Desconto Legal'] = 0.40 //podemos criar o nome com espaços mas não é recomendado
+console.log(prod1)
+
+
+//outro exemplo
+const prod2 = {
+    nome: 'Camisa polo',
+    preco: 79.90
+}
+console.log(prod2)
+
+//outro exemplo
+//dentro do objeto podemos criar subobjetos
+const prod3 = {
+    nome: 'Camisa regata',
+    preco: 39.90,
+    obj:{
+        blabla: 1,
+        obj: {
+            blabla: 2
+        }
+    }
+}
+console.log(prod3)
+
+
+//OBSERVAÇÃO JSON NÃO É A MESMA COISA QUE OBJETO !!!
