@@ -1,0 +1,25 @@
+// arrays
+
+const valores = [7.1, 8.0, 1.5, 2.0]
+console.log(valores[0], valores [3])
+console.log(valores[4]) // o valor 4 não existe, não vai dar um erro, vai apresentar "undefined"
+//porém eu posso colocar esse indice 4 fora do array acima
+valores[4] = 5.3
+console.log(valores) //ele vai falar que o array la em cima agora tem o '5.3'
+
+//caso eu coloco o indice 10 que não tem no array
+valores[10] = 7.7
+console.log(valores) // vai apresenta assim  7.1, 8, 1.5, 2, 5.3, <5 empty items>, 7.7 ]
+console.log(valores.length) // lenght fala quantos elementos tem no array
+
+//push = adiciona novos elementos no array (podendo misturar coisas no array, mas não é recomendado)
+valores.push({id: 3}, false, null, 'teste')
+console.log(valores)
+console.log(valores.pop()) //tira o ultimo elementro do array
+
+delete valores[0] //deleta o indice 0 e o deixa vazio
+console.log(valores)
+
+console.log(typeof valores) //mostra o tipo do array, o array é um objeto !
+
+//LEMBRE-SE SEMPRE FAÇA O ARRAY COM DADOS IGUAIS OU SEJA ARRAY SÓ DE STRING, ARRAY SÓ DE INTEIRO, SÓ DE BOOLEANO ETC... 
