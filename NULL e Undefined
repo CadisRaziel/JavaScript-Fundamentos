@@ -1,0 +1,27 @@
+// NULL e Undefined
+
+let valor //como não atribui nada a essa variavel ela vai ser "undefined"
+console.log(valor)
+
+
+//se voce tem uma variavel e não tem nenhum endereço que aponte pra alguma variavel
+valor = null // variavel vazia
+console.log(valor)
+
+
+const produto = {}
+console.log(produto.preco)
+console.log(produto)
+
+produto.preco = 3.50
+console.log(produto)
+
+produto.preco = undefined // evite atribuir undefined
+console.log(!!produto.preco)
+console.log(produto)
+delete produto.preco //deleta o que esta dentro do objeto
+
+
+produto.preco = null // produto sem preço 
+console.log(!!produto.preco) // vai dar false pois tem o null
+console.log(produto)
