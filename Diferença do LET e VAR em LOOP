@@ -1,0 +1,67 @@
+//LET
+
+//utilizando o let a variavel i só esta disponivel dentro do {}
+
+for(let i = 0; i < 10; i++)
+{
+    console.log(i)
+}
+console.log('i =',i) //diferente do VAR o ele não vai executar o console.log fora do {}
+
+
+// outro exemplo
+
+const funcs = []
+for (let i = 0; i < 10; i++) {
+    funcs.push(function() {
+        console.log(i)
+    })
+}
+funcs [2]()
+funcs [8]()
+//veja a diferença que há aqui do LET para o VAR
+//como o LET voce pode colocar function ele não vai ignorar a variavel i como o VAR faz
+//e quando voce seleciona os indices ele vai dar o resultado corretamente
+// [2] vai mostrar o numero 2
+// [8] vai mostrar o numero 8
+
+
+// IMPORTANTE
+// A VARIAVEL LET É GLOBAL, DE BLOCO E DE FUNÇÃO(FUNCTION)
+// A VARAIVEL VAR É GLOBAL E FUNÇÃO (FUNCTION)
+
+
+//----------------------------------------------------------------------------------
+
+//VAR
+
+//for = repetição 
+for(var i = 0; i < 10; i++)
+{
+    console.log(i)
+}
+
+console.log('i =', i) // porém esse console fora do {} não vai apresentar 123456789, vai apresentar 'i = 10' 
+//se eu executar o console fora do {} ele vai apresentar o valor de i mesmo assim
+//isso se da porque estamos utilizando uma variavel VAR que não esta dentro do bloco {}
+
+// outro exemplo
+
+const funcs = []
+for (var i = 0; i < 10; i++) {
+    funcs.push(function() {
+        console.log(i)
+    })
+}
+funcs [2]()
+funcs [8]()
+// repare no exemplo assim, vimos um erro historico do javascript, mesmo chamando a função e colocando indices
+// ele iginora a variavel i e sempre vai mostrar a condição 10
+// isso acontece porque o VAR não tem o escopo, não usa o function como o LET
+// [2] vai mostrar o numero 10
+// [8] vai mostrar o numero 10
+
+
+// IMPORTANTE
+// A VARIAVEL LET É GLOBAL, DE BLOCO E DE FUNÇÃO(FUNCTION)
+// A VARAIVEL VAR É GLOBAL E FUNÇÃO (FUNCTION)
