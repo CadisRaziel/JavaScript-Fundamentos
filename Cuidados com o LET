@@ -1,0 +1,31 @@
+//a variavel let é visivel dentro e fora do bloco
+let numero = 1
+{
+    let numero = 2 
+    console.log('dentro', numero)
+}
+console.log('fora',numero)
+
+
+// IMPORTANTE
+// A VARIAVEL LET É GLOBAL, DE BLOCO E DE FUNÇÃO(FUNCTION)
+// A VARAIVEL VAR É GLOBAL E FUNÇÃO (FUNCTION)
+
+
+
+
+// imagine que voce tem uma variavel let numero2 dentro do {}
+// e uma variavel let numero fora do {}
+// e eu coloco no console.log de dentro do {} para mostrar a let de fora(numero)
+// o console.log vai procurar dentro do {} se tem a variavel let 'numero'
+// se não tiver ela vai procurar fora do {} e como temos uma variavel let numero fora do {} ela mostra o numero
+// 1 em ambas
+let numero = 1
+{
+    let numero2 = 2 
+    console.log('dentro =', numero)
+}
+console.log('fora =',numero)
+
+
+
