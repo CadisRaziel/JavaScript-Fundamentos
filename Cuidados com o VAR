@@ -1,0 +1,29 @@
+{
+    {
+        {
+            {
+                var sera = 'Sera???'
+                console.log(sera) //a variavel var pode ser vista dentro de varios blocos
+            }
+        }
+    }
+}
+console.log(sera) // como tambem pode ser vista fora de varios blocos
+
+function teste(){
+    var local = 123 //quando definimos uma VAR dentro de uma function ela só é vista dentro do bloco
+    console.log(local)
+}
+teste()
+console.log(local) // se eu tentar executar ela fora do bloco vai dar erro
+
+
+// nesse exemplo o var é mostrado fora do {} e dentro do {}, porém a variavel são iguais
+// a variavel que tiver o maior valor será mostrada no 'numero' de fora do {} e no 'numero' de dentro do {}
+// ou seja vai mostra o numero dois em ambas
+var numero = 1
+{
+    var numero = 2
+    console.log('dentro =', numero)
+}
+console.log('fora =', numero)
