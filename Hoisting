@@ -1,0 +1,28 @@
+//não a motivos para fazer o codigo abaixo dessa maneira
+//são apenas exemplos de como a variavel VAR se adequa a arquitetura do codigo
+
+console.log('a =', a)
+var a = 2
+console.log('a =',a)
+
+
+// repare no código acima o console.log esta primeiro e depois vem o VAR
+// o hoisting faz o VAR subir fazendo com que o codigo fique como no exemplo abaixo \/
+// o hoisting faz isso só com o VAR
+var a 
+console.log('a =', a)
+a = 2
+console.log('a =',a)
+
+//dentro da função ele faz a mesma coisa que o codigo acima /\ 
+function teste (){
+    console.log('a =', a)
+    var a = 2
+    console.log('a =',a)
+}
+teste()
+
+// com o LET ele da erro, diz que o b não esta definido !!
+console.log('b =', 2)
+let b = 2
+console.log('b =', 2)
