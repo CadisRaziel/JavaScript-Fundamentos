@@ -1,0 +1,22 @@
+// par nome/valor (key/value)
+
+const saudacao = 'opa' //contexto lexico 1
+
+function exec() {
+    const saudacao = 'falaa' // contexto lexico 2
+    return saudacao
+}
+console.log(saudacao)
+console.log(exec())
+
+// objetos são grupos aninhados de pares nome/valor(key/value)]
+const cliente = {
+    nome: 'vitor',
+    idade: 28,
+    peso: 60,
+    endereco: {
+        rua: 'sao paulo',
+        numero: 918
+    }
+}
+console.log(cliente)
