@@ -1,0 +1,94 @@
+
+// devem sempre iniciar por uma LETRA
+// podem ter Letra, algoritimos, _ e $
+// é case sensitive, ou seja Maiuscula e minuscula
+// não pode usar palavras reservadas (exemplo class)
+
+// podemos colocar varias variaveis em uma só linha
+var nome = 'vitor', sobrenome = 'brussolo', pais = 'brasil', idade = 28;
+
+// podemos colocar as variaveis em cascata
+var nome = 'vitor',
+    sobrenome = 'brussolo',
+    pais = 'brasil',
+    idade = 28; 
+
+
+var animal; //variavel indefinida
+animal = 'leao'; //variavel definida agora
+
+//numeros
+var preco = 12.50 // certo !! USE O .
+//var preco1 = 12,50 // ERRADO !! não pode usar ,
+var x = 10 + 20 // 30
+var y = x + 20 // 50
+
+//string
+var nome = 'vitor'
+var nome1 = "vitor"
+
+//boleans (true/false)
+var avancar = false
+var parar = true
+
+//array
+var nomes2 = ['vitor', 'joao', 'gi']
+
+//objetos
+// em uma linha só
+var automovel = {marca:'mercedez', ano:2020, cor:'preto'}
+
+//em cascata
+var automovel = {
+    marca:'mercedez',
+    ano: 2020,
+    cor: 'preto'
+}
+
+//--------------------------------------------------------
+// scripts
+function teste() {
+
+//var valor = 'vitor';
+//document.getElementById('info').innerHTML = valor;
+// vai apresentar 'vitor'
+
+
+
+//var valor1;
+//(para definir ela) valor1 = 'vitor'
+//document.getElementById('info').innerHTML = valor;
+//vai apresentar 'undefined' (variavel nao definida)
+
+
+
+//var nome = 'vitor', sobrenome = 'bz'
+//document.getElementById('info').innerHTML = nome + ' ' + sobrenome;
+//vai apresentar 'vitor bz'
+
+
+
+//var preco3 = 12.50
+//var quantidade = 12
+//var total = preco3 * quantidade
+//document.getElementById('info').innerHTML = total;
+//vai apresentar o total '150'
+
+
+
+//var nomes = ['vitor', 'joao', 'gi']
+//document.getElementById('info').innerHTML = nomes[2]
+//vai apresentar o nome a partir do indice 'gi' (caso uso um indice que não tem, vai apresentar 'undefined')
+
+
+//var automovel = {
+    //marca:'mercedez',
+    //ano: 2020,
+    //cor: 'preto'
+//};
+//document.getElementById('info').innerHTML = automautomovel.marca; 
+//vai apresentar 'mercedez'
+
+//document.getElementById('info').innerHTML = automautomovel.marca + ' (' + automovel.ano + ')';
+//vai apresentar 'mercedez (2020)'
+}
