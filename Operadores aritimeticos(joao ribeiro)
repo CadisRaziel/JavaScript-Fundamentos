@@ -1,0 +1,52 @@
+// operadores aritimeticos
+
+/* Operador |    Descrição
+------------|------------
+ * +        |   adição
+ * -        |   subtração
+ * *        |   multiplicação
+ * /        |   divisão
+ * ---------|----------
+ * %        |   modulus
+ * ++       |   incremento
+ * --       |   decremento
+ */
+
+ var x = 10
+ var y = 10
+ var adicao = x + y
+ var subtracao = x - y
+ var multiplcacao = x * y
+ var divisao = x / y
+ var resto = x % y
+
+ var posicao = 10 //valor inicial
+ posicao++; // 10+1 = 11
+ posicao--; // 10-1 = 10
+
+
+ /*Operador     Exemplo     igual a
+  * =           x = y       x = y 
+  * +=          x += y      x = x + y
+  * -=          x -= y      x = x - y
+  * *=          x *= y      x = x * y
+  * /=          x /= y      x = x / y
+  * %=          x %= y      x = x % y
+  */
+
+  // exemplo acima
+  var x = 10, y = 20
+  x += y //resultado 30
+
+
+  var nome = "vitor"
+  var sobrenome = "bz"
+  var nome_completo = nome + ' ' + sobrenome;
+  console.log(nome_completo)
+
+
+
+  var nome = "vitor"
+  var sobrenome = "bz"
+  nome += ' ' + sobrenome;
+  console.log(nome)
