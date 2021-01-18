@@ -1,0 +1,31 @@
+// tratamento de erro com Try/Cath/Throw (try/cath como no c#)
+function tratarErroErelancar(erro){
+    throw new Error('ocorreu um erro de procesamento')  
+    //tambem posso fazer assim
+    //throw 10
+    //throw true
+    //throw 'mensagem'
+    //throw {
+        //nome: erro.name
+        //msg: erro.message,
+        //date: new Date
+    //}  
+}
+
+//exemplo uma chamada ajax, o serviço esta fora, deu um erro 500 é super interessante por try e cath em chamada ajax, em sql etc...
+
+function ImprimirNome(obj) {
+    try{    
+    console.log(obj.name.toUpperCase() + '!!!')
+    } 
+    catch(e) {
+        tratarErroErelancar(e)
+    }
+    finally { //mesmo que aconteça um erro ou não ele sempre executa esse código (usar somente em situações que ele entraria)
+        console.log('final')
+    }
+}
+const obj = { nome: 'Roberto' } //repare que acima coloquei name e aqui nome, justamente para gerar o erro.
+ImprimirNome(obj)
+
+
