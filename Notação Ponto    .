@@ -1,0 +1,21 @@
+console.log(Math.ceil(6.1)) // arredondar pra cima, ou seja mesmo sendo 6.1 ele vai passar a ser 7
+
+const obj1 = {}
+obj1.nome = 'bola'
+// obj1['nome'] = 'bola2' //essa linha faz a mesma função que a de cima
+console.log(obj1.nome)
+
+function Obj(nome){
+    this.nome = nome // como no c# this siginifca "esse" (no javascript vai deixar a função publica) (atributo)
+    this.exec = function(){ // (função)
+        console.log('exec....')
+    }
+}
+
+const obj2 = new Obj('Cadeira') // quando criar um objeto temos que passar um parametro para dentro do (), se não fica undefined
+const obj3 = new Obj('mesa')
+console.log(obj2) //se eu nao colocar .nome vai apresentar assim "Obj { nome: 'Cadeira' }"
+console.log(obj3.nome) // com .nome fica apenas assim "mesa"
+//repare que coloquei nome no console log, isso porque o "this" deixou o nome publico sendo acessivel em todo código
+
+obj3.exec() //como coloquei o console.log dentro da função para apresenta-lo é só por esse codigo
