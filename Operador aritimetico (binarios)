@@ -1,0 +1,16 @@
+// operadores aritimeticos (são binarios, 2 operando)
+
+const [a, b, c, d] = [3, 5, 1, 15] //usando o destructuring (se nao fizesse isso eu faria 4 variaveis)
+const soma = a + b + c + d
+const subtracao = d - b
+const multiplicacao = a * b
+const divisao = d / a
+const modulo = a % 2 // resto da divisão ( a'3' / 2 e o resultado(resto vai ser 1) vai ser armazenado na variavel modulo)
+// modulo é muito usado para saber se o numero é par ou impar se for igual a 0 é par, igual a 1 é impar
+
+console.log(soma, subtracao, multiplicacao, divisao, modulo)
+
+
+// -a = operador unario (vai deixar o numero negativo)
+// posso utilizar ele assim
+console.log(soma, subtracao, multiplicacao, -divisao, modulo)
