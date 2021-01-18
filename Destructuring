@@ -1,0 +1,88 @@
+// operador Destructiring 
+// operador de desestruturação (objeto)
+// fomra de  extrair de dentro do objeto seus atributos
+// array como estrutra, forma de tirar elementos do array
+
+// tem 2 forma de escrita
+// objeto usa chaves {}
+// array usa o colchete []
+// sao formas de tirar valor do objeto sem acessar o objeto ou array
+
+// é uma ferramenta do EC6 (ES2015)
+
+//exemplos
+//utilizando objeto
+
+//criando o objeto
+const pessoa = {
+    nome: 'ana',
+    idade: 5,
+    endereco: {
+        rua: 'abc',
+        numero: 1000
+    }
+}
+//usando o destructuring
+// o exemp abaixo diz o seguinte, tire de dentro de pessoa o atributo nome e idade = de pessoa
+const { nome, idade } = pessoa // não é {} para criar um objeto e sim para tirar um atributo do objeto
+console.log(nome, idade)
+
+// ou podemos colocar uma variavel no lugar de nome e idade
+const { nome: n, idade:i}  = pessoa
+console.log(n, i)
+
+// tentando pegar um atributo que nao existe dentro do objeto
+const { sobrenome, bemHumorada = true} = pessoa //caso nao retornar nada (undefined) eu coloquei true em bemHumorada para retornar verdadeiro
+console.log(sobrenome, bemHumorada)
+
+
+// pegando rua e numero
+const { endereco: {rua, numero } } = pessoa
+console.log(rua, numero)
+
+
+// PARTE 2
+// utilizando array
+const [a] = [10]
+console.log(a)
+
+//posso criar um array e utilizar o destructuring para atribuir valor nele depois olhe só
+const[n1, n2, n3, n4 = 0] = [10, 20, 30] //eu defini o n4 = 0
+console.log(n1, n2, n3, n4)
+
+
+// PARTE 3
+//utilizando em function
+//para gerar um numero aleatorio entre 50 e 40
+// aqui em baixo eu vou passar um objeto para dentro da função
+// sem precisar usar a notação ponto pra tira de dentro do objeto
+function rand( {min = 0, max = 1000} ) { //aqui estou usando um destructuring
+    const valor = Math.random() * (max - min) + min
+    return Math.floor(valor)
+}
+const obj = {max:50, min: 40}
+console.log(rand({max: 50, min: 40})) //aqui estou usando um objeto
+// ou
+console.log(rand({ min: 955 })) //vai ficar navegando entre 955 e 1000
+// ou 
+console.log(rand({})) // vai ficar navegando entre 0 e 1000
+// ou
+console.log(rand()) //aqui vai undefined pois não ta com o metodo destructuring{}
+
+
+//PARTE 4
+//utilizando o array dentro da function
+function randi([min = 0, max = 1000]) {
+    if(min > max) [min, max] = [max, min] //usnado o array para inverter os valores minimos do maximo
+    const valor = Math.random() * (max - min) + min
+    return Math.floor(valor) //floor para arredondar para baixo
+}
+console.log(randi([50, 40])) //aqui nao estamos falando qual é max e qual e minimo (vai pegar um numero aleatori entre 50 e 40)
+//ou
+console.log(randi([992]))
+//ou
+console.log(randi([, 10])) //posso passar só o segundo valor
+//ou
+console.log(randi([])) //vai ficar navegando entre 0 e 1000
+//ou
+console.log(randi()) //aqui vai undefined pois não ta com o metodo destructuring{}
