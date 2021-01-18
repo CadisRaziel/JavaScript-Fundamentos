@@ -1,0 +1,16 @@
+//Operador ternario
+// ternario tem 3 operando (exemplo abaixo >= 7 ? )
+// ?
+
+// => = função
+const resultado = nota => nota >= 7 ? 'aprovado' : 'reprovado' // posso fazer com o if else, mas dessa forma é codigo reduzido
+console.log(resultado(7.1))
+console.log(resultado(6.5))
+
+// outro metodo porém com estrutura
+const resultado2 = nota1 => {
+    return nota >= 7 ? 'aprovado' : 'reprovado' //vai funcionar da mesma forma que o codigo acima /\
+}
+console.log(resultado(7.1))
+console.log(resultado(6.5))
+
