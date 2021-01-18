@@ -1,0 +1,42 @@
+// executando javascript no browser = frontend
+// executando javascript no node = backend
+
+// a variavel VAR fica acessivel o WINDOW(console do browser)
+// a const e o let não fica acessivel ao window
+
+//function () {} fica acessivel ao window
+
+
+//utilizando a function arrow function exemplo
+// const f2 = () => console.log(this === window) ai ja nao fica acessivel ao window
+
+//constantes e variaveis LET não vao diretamente pro objeto global window,
+//eles ficam em memoria no browser 
+
+
+//formas de fugir do escopo global é usando objeto
+//let pessoa = {nome: 'ana', falar: function() {return `eu sou ${this.nome}`}}
+// ai só o 'pessoa' esta global com todos seus atributos imbutidos
+
+
+//o global dentro do node equivale ao WINDOW
+let a = 3
+console.log(this.a) //let não é global no window
+console.log(global.a) //let não é global no window
+
+//o this é igual a o module.exports
+//exemplo
+this.d = false
+this.e = 'teste'
+this.f = 456
+console.log(module.exports) //vai mostrar os this
+//a maneira mais comum de fazer é assim
+module.exports = {d: false, e: 'teste', f: 456 }
+
+
+//criando uma variavel maluca sem VAR ou LET (NÂO FAÇA ISSO !!!)
+abc = 3
+console.log(global.abc)
+
+
+//aula acima é mais puxada ao NODE
