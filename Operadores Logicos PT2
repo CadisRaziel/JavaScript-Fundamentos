@@ -1,0 +1,51 @@
+// operadores logicos
+// && = uma coisa é verdadeira &&, e a segunda coisa é verdadeira para que o resultado for verdadeiro
+// && = uma coisa é verdadeira &&, e a segunda é falsa o resultado é falso
+//verdadeiro && verdadeiro = verdadeiro
+//verdadeiro && falso = falso
+//falso && ? = falso
+// obs: basta 1 ser falso que tudo da falso
+
+
+// || = ou 
+// v || ? = verdadeiro
+// f || ? = ?
+// f || v = verdadeiro
+// f || f = falso
+// obs: basta 1 ser verdadeiro que tudo da verdadeiro
+
+
+// xor = ou execlusivo
+// v xor v = false
+// v xor f = verdadeiro
+// f xor v = verdadeiro 
+// f xor f = falso
+// obs: no xor os dois valor tem que ser diferente (verdadeiro e falso) para dar verdadeiro
+
+// negação logica ! (operador unario, só atua em 1 valor)
+//!v -> falso
+//!f -> verdadeiro
+
+//exemplo
+function compras(trabalho1, trabalho2) { //trabalho1 e trabalho2 são booleanos (verdadeiro ou falso)
+    const comprarSorvete = trabalho1 || trabalho2 //se o 1 for verdadeiro ele nem olha o trabalho2
+    const comprarTV50 = trabalho1 && trabalho2 //se o 1 for falso ele nem olha o trabalho2
+    //const comprarTV32 = !!(trabalho1 ^ trabalho2) //bitwise xor, o != simula o bitwise xor ^ então é melhor utilizado como no exemplo abaixo
+    const comprarTV32 = trabalho1 != trabalho2
+    const manterSaudavel = !comprarSorvete //operador unario, todos os outros acimas são binarios
+
+    return {comprarSorvete, comprarTV50, comprarTV32, manterSaudavel} // aqui eu criei um objeto para juntar tudo {} key/value, o key ele ta fazendo automatico
+    //repare que não coloquei a key, somente o value 
+    //se eu colocar a key ficaria assim \/
+    //{sorvete: comprarSorvete, 
+    //TV50: comprarTV50,
+    //TV32: comprarTV32,
+    //saude: manterSaudavel}
+    //porém no ES6  ele ja cria as key automatico com o nome igual do value exemplo comprarSorvete: comprarSorvete
+    // e o value é o que esta la em cima exemplo comprarSorvete = trabalho1 || trabalho2
+    
+} 
+console.log(compras(true, true))
+console.log(compras(true, false))
+console.log(compras(false, true))
+console.log(compras(false, false))
