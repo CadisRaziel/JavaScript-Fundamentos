@@ -1,0 +1,33 @@
+//operadores de comparação
+
+
+//sinais que permitem comparar variaveis ou valores
+
+/*Operador      Descrição
+ * ==           Igual ao valor
+ * ===          Igual o valor e em TIPO (numero e string, float, boolean etc..)
+ * !=           Diferente do valor
+ * !==          Diferente do valor ou em TIPO
+ * >            Maior que
+ * <            Menor que
+ * >=           Maior igual que
+ * <=           Menor igual que
+ * ?            Operador ternario
+ */
+
+
+ //exemplo
+
+ function teste(){
+
+    var x = 10
+    var y = 20
+    if(x == y){
+        document.getElementById('info').innerHTML = 'SIM';
+    }else{
+        document.getElementById('info').innerHTML = 'NAO';
+    }
+
+
+
+ }
