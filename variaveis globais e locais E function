@@ -1,0 +1,91 @@
+//Variáveis Locais, Globais e Funções
+
+//Scope = siginifica o conjunto de variaveis, objetos e funções em que temos aesso em terminadas porções do nosso codigo
+
+//variavel local
+function teste(){
+    var nome = 'vitor'; //variavel local, só existe dentro dessa função
+    var idade = 28
+}
+
+function teste2(){
+    var nome = 'bz'; //elas não se sobrepoem pois tem scope diferente ela só vive dentro dessa function
+    // aqui nao tenho acesso a variavel idade da function de cima
+}
+
+function nomes(nome, sobrenome) // <= variaveis locais !!
+{
+
+}
+
+
+//variaveis globais
+var nome = 'vitor'; //vai poder ser usada dentro da function, mais tambem fora da function(tome cuidado ! )
+//ela vai estar disponivel para todas as functions criada (porém não é aconselhavel)
+
+function teste3(){
+    document.getElementById('info').innerHTML = nome;
+}
+
+
+//--------------------------------------------------
+teste4(); //ao colocar a função aqui e colocar o write abaixo, ela vai executar automaticamente na pagina.
+document.write(nome); 
+function teste4(){
+    nome = 'vitor' //variaveis não declarada com VAR ou LET se tornam globais
+}
+
+
+
+// "use strict";
+//ela foi feita no es5 para corrigir algumas falhas
+// ou seja imagine que eu coloco "use stritct" e depois a função com uma variavel não declarada com LET ou VAR
+//o "use stritc" vai fazer com que de erro, para alertar que a variavel não esta declarada
+// é boa para deixar o código mais correto, é usado antes das funções
+
+
+//document.write();
+//cuidado ao usar esse codigo pois sempre quando eu colocar ele, todo o resto do codigo a seguir é eliminado !
+//exemplo
+function testi(){
+        var x = 10
+        var y = 20
+        var resultado = x + y
+        document.write(resultado)
+    //tudo que tiver após essa ultima linha sera ignorado !!!! 
+}
+
+
+
+
+// FUNÇÃO !!
+
+//os parametros (), da para implementar variaveis locais 
+function test(){
+
+}
+
+function tes(){
+    adicao(10,20); // repare que essa funcao vai dar valor para as variaveis x e y abaixo
+    // e ao chamar a função 'tes();' ele vai apresentar o resultado de x + y
+}
+
+function adicao(x, y){ //na variavel local dentro do () não é necessario por var ou let
+        var resultado = x + y;
+        document.write(resultado)
+}
+
+// outra maneira de fazer o codigo acima mais com o return(mais aconselhavel)
+
+function te(){
+    var final = adicionar(100,250);
+    document.getElementById('info').innerHTML = final;
+}
+
+function adicionar(x, y){
+    var resultado = x + y;
+    return resultado;
+}
+
+//lembre-se nem todas as funções tem que devolver um resultado
+// repare que a function te(), não retorna nenhum resultado, ela apenas apresenta o resultado de outra function
