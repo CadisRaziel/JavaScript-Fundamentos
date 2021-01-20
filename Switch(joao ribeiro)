@@ -1,0 +1,80 @@
+//SWITCH
+//ela pode ter quantos case precisarmos...
+/*
+switch (condição){
+    case x:
+        //codigo
+        break;
+    
+    case y:
+        //codigo
+        break;
+
+    case z:
+        //codigo
+        break;
+
+    default:
+        //codigo
+}
+*/
+
+//exemplo
+function test(){
+        //fraco | mau = resultados negativos 
+        //bom | muito bom = resultados positivos
+
+        var classificacao = 'fraco'; // como eu classifiquei aqui como bom vai apresentar o resultado 'tem uma boa nota'
+        var resultado = '';
+        switch (classificacao) {
+            case 'mau':
+                resultado = 'Uma miseria de resultado';
+                break;
+
+            case 'fraco':
+                resultado = 'teste com nota baixa';
+                break;
+
+            case 'bom':
+                resultado = 'tem uma boa nota';
+                break;
+
+            case 'muito bom':
+                resultado = 'tem uma excelente nova'
+                break;     
+
+            default:
+                resultado = 'quando nenhuma resultado de cima for verdadeira ele apresenta o default'
+                break;
+        }
+        document.getElementById('info').innerHTML = resultado;
+
+}
+
+// outro exemplo juntando duas case
+function test(){
+    //fraco | mau = resultados negativos 
+    //bom | muito bom = resultados positivos
+
+    var classificacao = 'fraco'; // caso o nome da classificação nao tiver em nenhum case abaixo ele vai apresentar o default
+    var resultado = '';
+    switch (classificacao) {
+        //repare que o case 'mau' e case 'fraco' estão juntos, então se der um dos dois vai apresentar a frase 'teste com nota baixa'
+        case 'mau':           
+        case 'fraco':
+            resultado = 'teste com nota baixa';
+            break;
+
+        //aqui é a mesma coisa que acima..(juntando duas case)
+        case 'bom':         
+        case 'muito bom':
+            resultado = 'tem uma excelente nova'
+            break;     
+
+        default:
+            resultado = 'quando nenhuma resultado de cima for verdadeira ele apresenta o default'
+            break;
+    }
+    document.getElementById('info').innerHTML = resultado;
+
+}
