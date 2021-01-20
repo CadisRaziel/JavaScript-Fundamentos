@@ -1,0 +1,153 @@
+
+
+//CICLOS NO JAVASCRIPT
+
+//CILOS mais tradicionais : FOR, FOR IN, WHILE, DO WHILE, BREAK, CONTINUE
+
+
+//for (exemplo mais usado ! )
+function teste(){
+    // for(variavel; condicao; incremento ++)
+    var valores = [2,4,6,8,10];
+    var final = '';
+
+    for(i = 0; i < 5; i++){ //valores.lenght vai apresentar todos os valores do array
+        final += valores[i] + '</br>';
+    }
+
+    //for(i = valores.length -1; i >= 0; i--) //vai apresentar os valores do ultimo pro primeiro 
+        //final += valores[i] + '</br>';
+
+    document.getElementById('info').innerHTML = final;
+}
+
+//outro exemplo for
+function teste(){
+    // for(variavel; condicao; incremento ++)
+    var valores = [2,4,6,8,10];
+    var final = '';
+    var i = 0
+
+    for(; i < 5; i++){ //veja que defini o i ali em cima, e da certo, como o javascript tem a tipagem fraca ele funciona
+        final += valores[i] + '</br>';
+    }
+
+    
+
+    document.getElementById('info').innerHTML = final;
+}
+
+//outro exemplo for
+function teste(){
+    // for(variavel; condicao; incremento ++)
+    var valores = [2,4,6,8,10];
+    var final = '';
+    var i = 0
+
+    for(; i < 5;){ 
+        final += valores[i] + '</br>'; 
+        i++; //repare que tirei o i++ de dentro do () e tambem funciona !!!
+    }
+
+    
+
+    document.getElementById('info').innerHTML = final;
+}
+
+//======================================
+
+//CICLO FOR IN
+
+//exemplo (para pegar valores de dentro de um objeto)
+//obs o objeto aqui é o automovel
+function teste2(){
+    var automovel = {
+        marca: 'mercedes',
+        ano: 2020,
+        cor: 'vermelho'
+    };
+
+    var final = '';
+    var item;
+    for(item in automovel){
+        final += automovel[item];
+    }
+
+    document.getElementById('info').innerHTML = final;
+
+}
+
+//======================================
+
+//CICLO WHILE
+//quando a condição for verdadeira ele sempre vai repitir o codigo
+//quando a condição for falsa o ciclo interrompe e vai pro codigo seguinte
+
+function test5(){
+    var valor = 1
+    var final = '';
+    
+    while(valor < 10){
+        final += valor;
+        valor++; //no while é sempre importante ter o ++
+       
+    }
+    document.getElementById('info').innerHTML = final;
+}
+
+//CICLO DO WHILE
+//ele da a volta e ve a condição do while (valor < 10) por ultimo
+ function test5(){
+    var valor = 1
+    var final = '';
+    
+    do {
+        final += valor;
+        valor++;
+    }
+    while(valor < 10)
+    document.getElementById('info').innerHTML = final;
+}
+
+
+// BREAK E CONTINUE
+//Continue faze o codigo seguir e apresenta o restante dos resultados
+//break para o codigo e não mostra o restante dos resultados
+
+
+//continue exemplo:
+function teste(){
+    // for(variavel; condicao; incremento ++)
+    var valores = [2,4,6,8,10];
+    var final = '';
+
+    for(i = 0; i < 5; i++){ 
+        //if( valores[i] != 6){//para que apresente todos os valores menos o 6
+        // porém podemos fazer o mesmo que o codigo acima só que com o CONTINUE
+        if(valores[i] == 6) continue; //com o continue tambem temos o mesmo resultado que o codigo acima 
+        
+        final += valores[i] + '</br>';
+        //}
+    }
+
+
+    document.getElementById('info').innerHTML = final;
+}
+
+//break exemplo:
+
+function teste(){
+    // for(variavel; condicao; incremento ++)
+    var valores = [2,4,6,8,10];
+    var final = '';
+
+    for(i = 0; i < 5; i++){ 
+        
+        if(valores[i] == 8) break; //quando chegar no 6 e ir para o 8 ele para (break) e apresenta só o 2,4,6
+        final += valores[i] + '</br>';
+        
+    }
+
+
+    document.getElementById('info').innerHTML = final;
+}
