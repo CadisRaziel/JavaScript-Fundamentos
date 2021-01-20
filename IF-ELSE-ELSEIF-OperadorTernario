@@ -1,0 +1,91 @@
+//IF...ELSE....ELSE IF
+
+//exemplo 1
+//if(condição){
+        //se for verdadeira executa o codigo aqui dentro
+//}else{
+        //se for falso executa o codigo aqui dentro
+//}
+
+
+//exemplo 2
+//if(condição){
+    //se aqui for verdadeiro, o codigo termina aqui, mas se for falso vai pro debaixo
+//}else if(outra condição){
+    //se aqui for verdadeiro, o codigo termina aqui, mas se for falso vai pro debaixo
+//}else if(outra condição){
+    //se aqui for verdadeiro, o codigo termina aqui, mas se for falso vai pro debaixo
+//}else{
+    //se for falso termina aqui
+
+//}
+
+
+
+
+
+
+//exemplo 2
+
+function teste(){
+    var x = 10;
+    var y = 20;
+    var resultaod = '';
+    if(x == y){
+        resultado = 'verdadeiro';
+    }else {
+        resultado = 'falso';
+    }
+    document.getElementById('info').innerHTML = resultado;  
+}
+
+//ou usando operadores de comparação
+function teste1(){
+    var x = 10;
+    var y = 20;
+    var resultaod = '';
+    if(x != y && x >= 10){
+        resultado = 'verdadeiro';
+    }else {
+        resultado = 'falso';
+    }
+    document.getElementById('info').innerHTML = resultado;  
+}
+
+
+//utilizando o else if
+function teste4(){
+    var x = 10;
+    var y = 20;
+    var resultaod = '';
+    if(x == 5){
+        resultado = 'ok'
+    }else if (x == 10){
+        resultado = 'ok'
+    }else if (x == 20){
+        resultado = 'ok'
+    }else{
+        resultado = 'error';
+    }
+
+    document.getElementById('info').innerHTML = resultado;  
+}
+
+
+//OPERADORES TERNARIO (observação o sinal ? é o operador ternario)
+//ela é usada como uma alternativa de if else (criada em uma linha apenas)
+//(instrução) = ? "verdadeiro" : "falso";
+function teste(){
+    var x = 10;
+    var y = 20;
+    var resultado = (x == 10) ? "verdadeiro" : "falso"; 
+    document.getElementById('info').innerHTML = resultado;
+}
+
+//outro exemplo
+function teste(){
+    
+    var humano = 'homen';
+    document.getElementById('info').innerHTML = (humano == 'homen') ? "Genero Masculino" : "Genero Feminino";
+}
+
