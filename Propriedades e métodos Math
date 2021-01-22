@@ -1,0 +1,100 @@
+// Propriedades e métodos Math
+
+//PROPRIEDADES (para realizar calculos da matematica avançada)
+// Math.E
+// Math.LN10
+// Math.LN2
+// Math.LOG10E
+// Math.LOG2E
+// Math.PI
+// Math.SQRT1_2
+// Math.SQRT2
+
+
+
+//METODOS MATH
+// Math.abs(x) Retorna o valor absoluto de x
+// Math.acos(x) Retorna o arco-cosseno de x, em radianos
+// Math.acosh(x) Retorna o arco cosseno hiperbólico de x
+// Math.asin(x) Retorna o arco seno de x, em radianos
+// Math.asinh(x) Retorna o arco seno hiperbólico de x
+// Math.atan(x) Retorna o arco tangente de x como um valor numérico entre -PI / 2 e PI / 2 radianos
+// Math.atan2(y, x) Retorna o arco tangente do quociente de seus argumentos
+// Math.atanh(x) Retorna o arco tangente hiperbólico de x
+// Math.cbrt(x) Retorna a raiz cúbica de x
+// Math.ceil(x) Retorna x, arredondado para cima para o número inteiro mais próximo
+// Math.clz32(x) Retorna o número de zeros à esquerda em uma representação binária de 32 bits de x
+// Math.cos(x) Retorna o cosseno de x (x está em radianos)
+// Math.cosh(x) Retorna o cosseno hiperbólico de x
+// Math.exp(x) Retorna o valor de Ex
+// Math.expm1(x) Retorna o valor de Ex menos 1
+// Math.floor(x) Retorna x, arredondado para baixo para o número inteiro mais próximo
+// Math.fround(x) Retorna a representação float mais próxima (precisão única de 32 bits) de um número
+// Math.log(x) Retorna o logaritmo natural de x
+// Math.log10(x) Retorna o logaritmo de base 10 de x
+// Math.log1p(x) Retorna o logaritmo natural de 1 + x
+// Math.log2(x) Retorna o logaritmo de base 2 de x
+// Math.max(x, y, z, ..., n) Retorna o número com o valor mais alto
+// Math.min(x, y, z, ..., n) Retorna o número com o valor mais baixo
+// Math.pow(x, y) Retorna o valor de x à potência de y
+// Math.random() Retorna um número aleatório entre 0 e 1
+// Math.round(x) Arredonda x para o número inteiro mais próximo
+// Math.sinal(x) Retorna o sinal de um número (verifica se é positivo, negativo ou zero)
+// Math.sin(x) Retorna o seno de x (x está em radianos)
+// Math.sinh(x) Retorna o seno hiperbólico de x
+// Math.sqrt(x) Retorna a raiz quadrada de x
+// Math.tan(x) Retorna a tangente de um ângulo
+// Math.tanh(x) Retorna a tangente hiperbólica de um número
+// Math.trunc(x) Retorna a parte inteira de um número (x)
+
+
+
+// EXEMPLOS
+
+//valor de PI
+document.getElementById('info').innerHTML = Math.PI;
+
+
+//absoluto, retorna positivo de qualquer valor
+var valor = -123;
+document.getElementById('info').innerHTML = Math.abs(valor);
+
+//raiz quadrada 
+var = valor1 = 4;
+document.getElementById('info').innerHTML = Math.sqrt(valor1);
+
+//raiz cubica
+var = valor2 = 345;
+document.getElementById('info').innerHTML = Math.cbrt(valor2);
+
+//valor inteiro mais proximo (ou seja como ali é 10.0000001 o ceil vai transformar em 11)
+var valor3 = 10.0000001;
+document.getElementById('info').innerHTML = Math.ceil(valor3);
+
+//mesmo com casas decimais ele vira o valor inteiro em que esta (ou seja como ali é 14.9999999 o floor vai transformar em 14)
+var valor4 = 14.9999999;
+document.getElementById('info').innerHTML = Math.floor(valor4);
+
+//valor de potencia (valor5 ,2 = quadrado, 3 = cubo, ou 10 = elevado a 10)
+var valor5 = 3;
+document.getElementById('info').innerHTML = Math.pow(valor5, 3); 
+
+//arredondando valores com casas decimais (ou seja como ali é 10.5 o round vai arredondar para 11)
+//porém se tivermos 10.49 ele ja vai arredondar para 10
+var valor6 = 10.5;
+document.getElementById('info').innerHTML = Math.round(valor6);
+
+//remove as casas decimais 
+var valor7 = 15.324
+document.getElementById('info').innerHTML = Math.trunc(valor7);
+
+//valores randomicos
+var min = 10;
+var max = 100;
+var valor8 = Math.random();
+//var valor8 = (Math.random() * max); //entre o  e 100 e multiplicar com 100
+//var valor8 = Math.trunc((Math.random() * max)); //lembre-se que o trunc vai tirar os numeros decimais
+//var valor8 = Math.trunc((Math.random() * max)) +1; //+1 para que o 100 apareça ! (sem o +1 o 100 não é mostrado)
+//var valor8 = Math.trunc((Math.random() * (max - min))) + min; //min para ficar entro  minimo e o max 
+document.getElementById('info').innerHTML = valor8;
+
