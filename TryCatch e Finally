@@ -1,0 +1,38 @@
+// CONTROLE DE ERROS
+
+//Try catch
+//esse exemplo abaixo sem o try catch não iria dar erro, porém não iria executar
+var a = somar(10+20);
+document.write(a);
+
+//para se previnir use o try catch
+try{
+    somar(10,20);
+    document.write(10+20);
+}catch (error){
+    document.write('aconteceu um erro - ' + error);
+}   
+
+
+//throw - permite que nós criamos nossas mensagens de erro ! 
+//valor tem que ser igual a 10
+var valor = 10;
+try{
+    if(valor < 10) throw "invalido (menor que 10)";
+    if(valor > 10) throw "invalido (maior que 10)";
+    document.write("Valor correto");
+}catch(error){
+    document.write(error);
+}
+
+//try catch finally
+
+var elemento = document.getElementById('info');
+try{
+    somar(20,30);
+    elemento.innerHTML = "estou dentro do try";
+}catch (error){
+    elemento.innerHTML = "aconteceu um erro";
+} finally {
+    elemento.innerHTML += "</br>independentemente de tudo, tambem sou executado !";
+}
