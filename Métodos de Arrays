@@ -1,0 +1,75 @@
+// ARRAY
+
+// Descrição do Método
+// concat () Une dois ou mais arrays e retorna uma cópia dos arrays unidos
+// copyWithin () Copia os elementos da matriz dentro da matriz, para e de posições especificadas
+// entradas () Retorna um par chave / valor Array Iteration Object
+// every () Verifica se todos os elementos em uma matriz passam em um teste
+// fill () Preencher os elementos em uma matriz com um valor estático
+// filter () Cria uma nova matriz com cada elemento em uma matriz que passa em um teste
+// find () Retorna o valor do primeiro elemento em uma matriz que passa em um teste
+// findIndex () Retorna o índice do primeiro elemento em uma matriz que passa em um teste
+// forEach () Chama uma função para cada elemento da matriz
+// from () Cria uma matriz de um objeto
+// inclui () Verifique se uma matriz contém o elemento especificado
+// indexOf () Procura um elemento na matriz e retorna sua posição
+// isArray () Verifica se um objeto é um array
+// join () Junta todos os elementos de uma matriz em uma string
+// keys () Retorna um objeto de iteração de array, contendo as chaves do array original
+// lastIndexOf () Pesquisa na matriz por um elemento, começando no final, e retorna sua posição
+// map () Cria uma nova matriz com o resultado de chamar uma função para cada elemento da matriz
+// pop () Remove o último elemento de uma matriz e retorna esse elemento
+// push () Adiciona novos elementos ao final de uma matriz e retorna o novo comprimento
+// reduz () Reduz os valores de uma matriz a um único valor (indo da esquerda para a direita)
+// reduzRight () Reduz os valores de uma matriz a um único valor (indo da direita para a esquerda)
+// reverse () Inverte a ordem dos elementos em uma matriz
+// shift () Remove o primeiro elemento de uma matriz e retorna esse elemento
+// slice () Seleciona uma parte de uma matriz e retorna a nova matriz
+// some () Verifica se algum dos elementos em uma matriz passa em um teste
+// sort () Classifica os elementos de uma matriz
+// splice () Adiciona / remove elementos de uma matriz
+// toString () Converte uma matriz em uma string e retorna o resultado
+// unshift () Adiciona novos elementos ao início de uma matriz e retorna o novo comprimento
+// valueOf () Retorna o valor primitivo de um array
+
+
+//exemplos
+
+function teste1(){
+    //3 modos de escrever o array
+    var frutos1 = ['banana', 'laranja', 'pera', 'maça']; //forma mais comum de criar um ARRAY !
+    var frutos2 = Array('banana', 'laranja', 'pera', 'maça');
+    var frutos3 = Array.of('banana', 'laranja', 'pera', 'maça');
+    document.getElementById('info').innerHTML = frutos1;
+}
+
+//metodos
+// concat !
+function teste2(){
+    var nomes1 = ['vitor', 'gi', 'joao'];
+    var nomes2 = ['ariella', 'rosana']
+    var nomes = nomes1.concat(nomes2);
+    document.getElementById('info').innerHTML = nomes;
+
+
+    //join
+    //document.getElementById('info').innerHTML = nomes,join(' | ');
+
+    //push - adiciona no final
+    //nomes.push('monique');
+    //document.getElementById('info').innerHTML = nomes; //vai acrescentar monique no final do array nomes
+
+    //pop - remove o ultimo
+    //nomes.pop();
+    //document.getElementById('info').innerHTML = nomes;
+
+    //shift - remove o inclui
+    //nomes.shift();
+    //document.getElementById('info').innerHTML = nomes;
+
+    //unshift - adiciona ao início
+    //nomes.unshift('michele');
+    //document.getElementById('info').innerHTML = nomes;
+    
+
+}
