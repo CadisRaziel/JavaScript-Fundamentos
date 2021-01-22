@@ -1,0 +1,36 @@
+//metodos de uma string
+//pesquisar nesse site aonde tem todas
+https://www.w3schools.com/jsref/jsref_obj_string.asp
+
+//funções mais fundamentais
+
+//lenght => mostra a quantitade de caracters 
+//charAt() => mostra o caracter que esta na localização "x"
+//charCodeAt() 
+//concat()
+//endsWith()
+//fromCharCode()
+//includes() => imagine que eu defino include('itor') ele vai procurar no texto se tem itor e vai retornar verdadeiro ou falso
+//indexOf()
+//lastIndexOf()
+//localeCompare()
+//match()
+//repeat() => repete a variavel quantas vezes eu definir (var final = '<>'.repeat(100))
+//replace()
+//search()
+//slice() => vai cortar a frase a partir do numero de caracter definido (var parte = texto.slice(4,5))
+//split()
+//startsWith()
+//toLocaleLowerCase()
+//toLocaleUpperCase()
+//toLowerCase()
+//ToString()
+//toUpperCase() =>
+//trim()
+//valueOf()
+
+
+
+
+
+
