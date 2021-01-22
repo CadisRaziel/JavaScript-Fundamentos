@@ -1,0 +1,95 @@
+//  Datas e Horas
+//observação a se considerar a nunca esquecer
+//get para ir buscar
+//set para definir
+
+// Descrição do Método
+// getDate () Retorna o dia do mês (de 1-31)
+// getDay () Retorna o dia da semana (de 0-6) ou seja (0=domingo, 1=segunda, 2=terca, 3=quarta, 4=quinta, 5=sexta, 6,sabado)
+// getFullYear () Retorna o ano
+// getHours () Retorna a hora (de 0 a 23)
+// getMilliseconds () Retorna os milissegundos (de 0-999)
+// getMinutes () Retorna os minutos (de 0-59)
+// getMonth () Retorna o mês (de 0-11)
+// getSeconds () Retorna os segundos (de 0 a 59)
+// getTime () Retorna o número de milissegundos desde a meia-noite de 1 de janeiro de 1970 e uma data especificada
+// getTimezoneOffset () Retorna a diferença de tempo entre a hora UTC e a hora local, em minutos
+// getUTCDate () Retorna o dia do mês, de acordo com a hora universal (de 1-31)
+// getUTCDay () Retorna o dia da semana, de acordo com a hora universal (de 0 a 6)
+// getUTCFullYear () Retorna o ano, de acordo com a hora universal
+// getUTCHours () Retorna a hora, de acordo com a hora universal (de 0 a 23)
+// getUTCMilliseconds () Retorna os milissegundos, de acordo com a hora universal (de 0-999)
+// getUTCMinutes () Retorna os minutos, de acordo com a hora universal (de 0 a 59)
+// getUTCMonth () Retorna o mês, de acordo com a hora universal (de 0-11)
+// getUTCSeconds () Retorna os segundos, de acordo com a hora universal (de 0 a 59)
+// getYear () Obsoleto. Use o método getFullYear () em vez disso
+// now () Retorna o número de milissegundos desde a meia-noite de 1º de janeiro de 1970
+// parse () Analisa uma string de data e retorna o número de milissegundos desde 1º de janeiro de 1970
+// setDate () Define o dia do mês de um objeto de data
+// setFullYear () Define o ano de um objeto de data
+// setHours () Define a hora de um objeto de data
+// setMilliseconds () Define os milissegundos de um objeto de data
+// setMinutes () Define os minutos de um objeto de data
+// setMonth () Define o mês de um objeto de data
+// setSeconds () Define os segundos de um objeto de data
+// setTime () Define uma data para um número especificado de milissegundos após / antes de 1º de janeiro de 1970
+// setUTCDate () Define o dia do mês de um objeto de data, de acordo com a hora universal
+// setUTCFullYear () Define o ano de um objeto de data, de acordo com a hora universal
+// setUTCHours () Define a hora de um objeto de data, de acordo com a hora universal
+// setUTCMilliseconds () Define os milissegundos de um objeto de data, de acordo com a hora universal
+// setUTCMinutes () Define os minutos de um objeto de data, de acordo com a hora universal
+// setUTCMonth () Define o mês de um objeto de data, de acordo com a hora universal
+// setUTCSeconds () Define os segundos de um objeto de data, de acordo com a hora universal
+// setYear () Obsoleto. Use o método setFullYear () em vez disso
+// toDateString () Converte a parte da data de um objeto Date em uma string legível
+// toGMTString () Obsoleto. Use o método toUTCString () em vez disso
+// toISOString () Retorna a data como uma string, usando o padrão ISO
+// toJSON () Retorna a data como uma string, formatada como uma data JSON
+// toLocaleDateString () Retorna a parte da data de um objeto Date como uma string, usando as convenções de localidade
+// toLocaleTimeString () Retorna a parte da hora de um objeto Date como uma string, usando as convenções de localidade
+// toLocaleString () Converte um objeto Date em uma string, usando as convenções de localidade
+// toString () Converte um objeto Date em uma string
+// toTimeString () Converte a parte da hora de um objeto Date em uma string
+// toUTCString () Converte um objeto Date em uma string, de acordo com a hora universal
+// UTC () Retorna o número de milissegundos em uma data desde a meia-noite de 1º de janeiro de 1970, de acordo com o horário UTC
+// valueOf () Retorna o valor primitivo de um objeto Date
+
+//get e o set = são metodos que permite alterar valores que fazem parte da propriedade de um objeto
+//get para ir buscar
+//set para definir
+//getday = busca somente o dia
+
+//exemplo
+var d = new Date();
+var d = new Date(milliseconds);
+var d = new Date(dateString);
+var d = new Date(year, month, day, hours, minutes, seconds, milliseconds);
+
+
+
+function test(){
+    //data e hora
+    document.getElementById('info').innerHTML = Date();
+}
+
+function test1(){
+    var data = new Date();
+    document.getElementById('info').innerHTML = data.getDay;
+    //apresenta o dia da semana, ou seja (0=domingo, 1=segunda, 2=terca, 3=quarta, 4=quinta, 5=sexta, 6,sabado)
+}
+
+
+function test2(){
+    // o mes começa com o janeiro sendo o 0 e dezembro sera o 11
+    //var data_nascimento = new Date(ano, mes, dia);
+    var data_nascimento = new Date(2020, 11,25);
+    document.getElementById('info').innerHTML = data_nascimento.getMonth(); //getMonth para apresentar o mes apenas
+}
+
+function test2(){
+    // o mes começa com o janeiro sendo o 0 e dezembro sera o 11
+    //var data_nascimento = new Date(ano, mes, dia);
+    var data_nascimento = new Date(2020, 11,25);
+    data_nascimento.setHours(12); //vai definir a data como 12:00
+    document.getElementById('info').innerHTML = data_nascimento;
+}
