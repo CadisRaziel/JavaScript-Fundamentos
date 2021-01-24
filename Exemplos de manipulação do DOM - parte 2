@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AprendendoJS</title>
+        <meta charset="UTF-8">
+        <!-- Essa function só pode ser colocada aqui dentro do HEAD pois esta em arquivo separado -->
+        <script src='script1.js'></script>    
+        <!-- Podemos colocar varios scripts aqui !! S-->   
+        
+        <style>
+            #imagem{
+                margin: 20px;
+            }
+        </style>
+
+    </head>
+    <body>        
+        <!-- <button type ="button" onclick="teste()">Clicar</button> -->
+        <!-- repare que eu comentei o botao e coloquei o evento "onclick="teste()" dentro da img abaixo-->
+        <!-- isso vai fazer que quando eu clicar na imagem ela vai alterar sem precisar de botão  -->
+
+        <!-- <div>
+            <img id="imagem" onclick="teste()" src="https://findicons.com/files/icons/1008/quiet/256/yes.png">;
+        </div> -->
+
+
+        <!-- outro exemplo -->
+        <button type ="button" onclick="teste()">Clicar</button>
+        
+        <h3 class="titulo">Titulo 1</h3>
+        <h3 class="outra">Titulo 2</h3>
+        <h4 class="titulo">Titulo 3</h4>
+
+
+    </body>
+</html>
+
+//===================================
+JavaScript
+
+//Exemplos de manipulação do DOM - parte 2
+
+let valor = true; //para poder ficar trocando as imagens ao clicar no botao
+
+
+
+function teste(){
+    //yes:https://findicons.com/files/icons/1008/quiet/256/yes.png
+    //no:https://findicons.com/files/icons/1008/quiet/256/no.png
+
+    //para alterar a imagem que esta no html para que esta aqui no javascript
+    //let elemento = document.getElementById("imagem");
+     
+    //para poder ficar trocando as imagens ao clicar no botao
+    //if(valor){
+        //caso nao queira ficar trocando as imagens é só apagar o if e o let valor
+        //elemento.setAttribute("src", "https://findicons.com/files/icons/1008/quiet/256/no.png")
+        //valor = false;        
+    //} else{
+        //elemento.setAttribute("src", "https://findicons.com/files/icons/1008/quiet/256/yes.png")
+        //valor = true;
+    //}
+
+
+
+
+
+
+
+    //outro exemplo (imagine que tem varias classes com o mesmo nome e tem h1 ou h2 ou h3 nelas é só fazer isso abaixo)
+    let elementos = document.querySelectorAll("h3.titulo");
+    elementos[0].innerHTML ="titulo novo";
+
+    
+}
