@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AprendendoJS</title>
+        <meta charset="UTF-8">
+        <!-- Essa function só pode ser colocada aqui dentro do HEAD pois esta em arquivo separado -->
+        <script src='script1.js'></script>    
+        <!-- Podemos colocar varios scripts aqui !! S-->
+
+
+
+        <!-- repare que quando criamos uma class podemos no css alterar o elemento de todas de uma só vez -->
+        <style>
+            div{
+                margin-top: 20px;
+                border: 1px solid black;
+            }
+           
+        </style>
+
+    </head>
+    <body>        
+        <button type ="button" onclick="teste()">Clicar</button>
+
+        <!-- exemplos DOM e o JS-->
+        <p id="p1">Paragrafo 1</p>
+        <p id="p2">Paragrafo 2</p>
+        <p id="p3">Paragrafo 3</p>
+        <p id="p4">Paragrafo 4</p>
+
+        <a id="link" href="https://www.google.com">Clique para abrir o Google</a>
+
+        <div id="div1">
+            <h3>Div1</h3>
+            <img id="imagem" src="https://images6.fanpop.com/image/answers/613000/613366_1472065830863_179_281.jpg" alt="Cadis Raziel">
+        </div>
+
+        <div id="div2">
+            <h3>Div2</h3>
+        </div>
+        
+
+    </body>
+</html>
+
+
+//===================================================
+JavaScript
+
+
+//Exemplos de manipulação do DOM
+//todos os exemplos aqui estarao no 03.html
+
+function teste(){
+    //modificiar um elemento
+    document.getElementById("p1").innerHTML = "Paragrafo 1 modificado";
+
+
+    //modificar o estilo de um elemento
+    let elemento = document.getElementById("p2");
+    elemento.style.fontWeight = "bold";
+    elemento.style.color = "blue";
+    elemento.innerHTML = "Alterando para cor azul e texto em negrito";
+
+
+    //modificiar a visibilidade de um elemento 
+    let p3 = document.getElementById("p3");
+    let p4 = document.getElementById("p4");
+    p3.hidden = true;
+    p4.innerHTML = "O paragrafo 3 foi escondido";
+
+
+    //modificar o atributo de um elemento (href ou src)
+    var link = document.getElementById("link");
+    link.setAttribute("href", "https://www.udemy.com/course/curso-web/learn/lecture/8778110#overview");
+
+
+    //adicionar um atributo no link
+    link.setAttribute("target", "_blank");
+
+
+    //adicionar um novo elemento á pagina (cuidado que sempre que adiciona algo por aqui é adicionado no final do codigo)
+    let novo = document.createElement("p"); //p é paragrafo
+    document.body.appendChild(novo);
+    novo.innerHTML = "Novo paragrafo";
+
+
+    //mudar elementos entre divs
+    let imagem = document.getElementById("imagem");
+    document.getElementById("div2").appendChild(imagem);
+
+
+
+}
