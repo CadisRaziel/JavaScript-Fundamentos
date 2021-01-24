@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AprendendoJS</title>
+        <meta charset="UTF-8">
+        <!-- Essa function só pode ser colocada aqui dentro do HEAD pois esta em arquivo separado -->
+        <script src='js/script.js'></script>    
+        <!-- Podemos colocar varios scripts aqui !! S-->
+
+
+
+        <!-- repare que quando criamos uma class podemos no css alterar o elemento de todas de uma só vez -->
+        <style>
+            .segunda{
+                color: red;                
+            }
+        </style>
+
+    </head>
+    <body>        
+        <button type ="button" onclick="teste()">Clicar</button>
+
+        <!-- exemplos DOM e o JS-->
+        <p id="primeiro">Primeira frase</p>
+        <p id="ola" class="segunda">Segunda1 frase</p>
+        <p class="segunda">Segunda2 frase</p>
+        <p class="segunda">Segunda3 frase</p>
+        <p class="segunda">Segunda4 frase</p>
+
+    </body>
+</html>
+
+
+
+//=========================================================================================
+JavaScript
+
+//DOM e o JavaScript
+
+//dom = document object model
+//é uma interface de desenvolvimento que contem
+//os elementos HTML como objetos
+//As propriedades(atributos) de todos os elementos HTML
+//metodos para acesso aos elementos HTML
+//todos os eventos relacionados com os elementos HTML
+
+
+
+//HTML DOM e o JS
+//Altera os elementos HTML
+//Altera os atributos dos elementos HTML
+//modifica os estilos (CSS)
+//adicionar e remover elementos HTML
+//Reagir e criar eventos
+
+
+
+//Como funciona?
+//Encontrar o elemento HTML:
+// document.getElementById("id_do_elemento");
+// document.getElementsByTagName("tag_html");
+// document.getElementsByClassName("nome_da_classe");
+
+
+//Alterar os valores dos atributos:
+// elemento.innerHTML = "novo_texto";
+// elemento.atributo = valores;
+// elemento.style.propriedade = valor;
+
+
+//exemplos na pratica
+//esta no 02.html !!
+function teste(){
+    //buscando pelo id (o id não pode ser repitido, cada um tem o seu)
+    document.getElementById("primeiro").innerHTML = "nova frase 1";
+    // outro metodo de escrita (para caso ter varias coisas no mesmo id)
+    var elemento = document.getElementById("primeiro");
+    elemento.innerHTML = "nova frase 1";
+
+
+    //podemos buscar varios elementos que contem a mesma classe  
+    document.getElementsByClassName("segunda").innerHTML = "nova frase 2"
+    // outro metodo de escrita(caso queira alterar apenas 1 elemento da classe, para isso utilizaremos array e indice)
+    var elementos = document.getElementsByClassName("segunda");
+    elementos[2].innerHTML = "nova frase 2";
+
+    //alterando a cor da letra com o javascript (no html "css" defini como vermelho)
+    var element = document.getElementsById("ola");
+    element.style.color = "blue";
+
+
+
+
+    
+}
