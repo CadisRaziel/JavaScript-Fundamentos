@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AprendendoJS</title>
+        <meta charset="UTF-8">
+        <!-- Essa function só pode ser colocada aqui dentro do HEAD pois esta em arquivo separado -->
+        <script src='script1.js'></script>    
+        <!-- Podemos colocar varios scripts aqui !! S--> 
+        
+        <!-- CSS para o exemplo 3-->
+        <style>
+            p{
+                border: 1px solid red;
+                padding: 20px;
+            }
+        </style>
+
+
+
+    </head>
+    <body onload="iniciar()">   <!-- FORMA MAIS COMUM AO INVES DE COLOCAR SCRIPT NO BODY "exemlo 2" <body onload="iniciar()">-->     
+        
+        <button type ="button" onclick="teste()">Clicar</button>
+
+        <!-- quando eu coloco o this, eu estou dizendo que somente essa linha de codigo sera alterada -->
+        <!-- e quando eu coloco o onclick sem o "button type="button" ele faz que ao clicar no "Paragrafo 1 altere para "T" como eu defini na function-->
+        <p onclick="alterar(this)">Paragrafo 1</p>
+        <p onclick="alterar(this)">Paragrafo 2</p>
+
+        <!-- exemplo 1 -->
+        <button type="button" onclick="ApresentarData()">Apresentar Data</button>
+        <p id="info">[resultado]</p>
+
+        <!-- exemplo 2 (imagine que eu nao tenha o evento onclick aqui e quero fazer com que o JS faça isso ) -->
+        <button id="botao" type="button">Apresentar Data</button>
+        <p id="info2">[resultado]</p>
+        <!-- para que eu possa fazer o exemplo 3, preciso colocar o script abaixo em comentario -->
+        <!-- repare que no body eu coloquei onload="iniciar()"-->
+        <!-- repare que eu nao preciso por o script se eu colocar o <body onload="iniciar()">-->
+        <!-- <script>
+            document.getElementById("botao").onclick = ApresentarData2;
+        </script> -->
+
+        <!-- exemplo 3 -->
+        <!-- imagina que ao passar o mouse em cima do texto altera o aspecto visual -->
+        <p onmouseover="mouseEntra(this)" onmouseout="mouseSai(this)" onclick="mouseClick(this)">Texto 1</p>
+        <p onmouseover="mouseEntra(this)" onmouseout="mouseSai(this)" onclick="mouseClick(this)">Texto 2</p>
+
+        
+
+    </body>
+</html>
+
+
+//===============================================
+JavaScript
+
+
+//eventos
+
+//tipos de ent
+//Quando um visitante faz um clique com o mouse
+//Quando uma pagina web é carregada
+//Quando uma imagem acabou de ser carregada
+//Quando o cursor do mouse passa por cima de um elemento
+//Quando um campo de preenchimento de formuma é alterado
+//Quando um formulario é submetido
+//Quando o visitante pressiona a tecla
+//etc...
+
+//a function abaixo iniciar eu coloquei aqui <body onload="iniciar()"> (para o exemplo 2)
+function iniciar(){
+    document.getElementById("botao").onclick = ApresentarData2;
+}
+
+function teste(){
+    document.write("ola mundo");
+}
+
+function alterar(elementos){ //ao clicar no <p onclick="alterar(this)">Paragrafo 1</p> ele vai alterar para "T"
+    elementos.innerHTML = "---------------";
+
+}
+
+function ApresentarData(){ 
+        document.getElementById("info").innerHTML = Date();
+}
+
+//para o exemplo 2
+function ApresentarData2(){ 
+    document.getElementById("info2").innerHTML = Date();
+}
+
+//para o exemplo 3
+function mouseEntra(elemento){
+    elemento.style.backgroundColor = "yellow";
+}
+function mouseSai(elemento){
+    elemento.style.backgroundColor = "White";
+}
+function mouseClick(elemento){
+    elemento.innerHTML = "novo texto";
+}
