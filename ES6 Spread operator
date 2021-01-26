@@ -1,0 +1,92 @@
+// ES6 Spread operator
+
+
+//SEM Spread operator !! concatencando arrays
+function teste(){
+    let nomes1 = ['vitor', 'joao'];
+    let nomes2 = ['gi', 'rosana'].concat(nomes1);
+    document.getElementById("info") = nomes2;
+}
+
+//COM Spread operator
+function teste2(){
+    let nomes1 = ['vitor', 'joao'];
+    let nomes2 = ['gi', 'rosana', ...nomes1]; // ... = Spread operator
+    document.getElementById("info") = nomes2;
+
+    // OU SEJA O SPREAD OPERATOR É OS ... "tres pontinhos"
+}
+
+//outro exemplo SEM o Spread operator
+//imagine que eu quero colocar todos os caracteres de uma frase dentro de um array e esses caracteres ficaram separados por virgula...
+// o resultado será esse e,s,t,a ,é, ,u,m,a, ,f,r,a,s,e
+function test3(){
+    let frase = "esta é uma frase";
+    let caracteres = frase.split("");
+    document.getElementById("info").innerHTML = caracteres
+
+}
+// EXEMPLO com Spread operator do codigo acima teste3()
+function test3(){
+    let frase = "esta é uma frase";
+    let caracteres = [...frase]; //e pronto é só por os ... e o nome da variavel
+    document.getElementById("info").innerHTML = caracteres
+
+}
+
+
+
+// outro exemplo com o Spread operator
+//aqui na function adicao vai fazer a somatoria da function test4
+//repare no spread operator  let resultado = adicao(...dados);
+//colocamos os valores de x y z no function test4 dentro do let dados e adicionamos no let resultado com o spread operator
+function test4(){
+    let dados = [10, 20, 30];
+    let resultado = adicao(...dados);
+    document.write(resultado);
+}
+function adicao(x, y, z){
+    return x + y + z;
+}
+
+
+
+
+
+// exemplos ES6
+// uma outra funcao do ES6 ao colocar document.write(adicao(10)) o 10 ali ele vai somar com o y = 100
+function test4(){
+    document.write(adicao(10))
+}
+function adicao(x, y = 100){
+    return x + y;
+}
+
+// outro exemplo só que SEM o ES6
+function teste5(){
+    let pessoa = {
+        nome: 'vitor',
+        idade: 29,
+        falar: function(){
+            return "Ola mundo";
+        }
+    }
+    document.write(pessoa.falar);
+}
+// mesmo exemplo de cima só que com ES6
+// repare que podemos retirar o function de "falar"
+// porém podemos usar os dois jeitos
+function teste5(){
+    let pessoa = {
+        nome: 'vitor',
+        idade: 29,
+        falar(){
+            return "Ola mundo";
+        }
+    }
+    document.write(pessoa.falar);
+}
+
+
+
+
