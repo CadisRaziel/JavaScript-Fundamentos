@@ -1,0 +1,48 @@
+//ES6 var, let e const
+
+//variaveis
+//var = escopo de função
+//let = escopo de bloco de codigo
+//cont = não pode ser alterado
+
+
+// o var ultimamente esta perigoso usar evite-o e use o LET
+function testeVar(){
+    var valor = 10;
+    if(true){
+        var valor = 20;
+    }
+    document.write(valor);
+}
+
+//===============================================
+
+
+//a variavel let fora da function e a de dentro da function são duas variaveis diferentes mesmo tendo o mesmo nome
+// a de dentro da function só funciona dentro da function diferente do var
+function testLet(){
+    let valor = 10; 
+    if(true){
+        let valor = 30 //essa variavel let valor = 30 só existe dentro da function // mas se eu colocar só valor = 30, ai  o let valor fora da function que assume
+    }
+    document.write(valor);
+}
+
+//==============================================
+
+function testConst(){
+    const valor = 10;
+    valor = 20; //vai dar erro
+    document.write(valor);
+}
+
+// const tem um bug que dentro do objeto ela pode ser alterada seu valor repare:
+function bugConst(){
+    const pessoa = {
+        nome = 'vitor',
+        idade = 28
+    };
+    pessoa.nome = 'joao'; //repare que aqui a const é alterada
+
+    document.write("O nome é " + pesso.nome + "e tem " + pessoa.idade + " anos de idade");
+}
