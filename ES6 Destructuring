@@ -1,0 +1,83 @@
+//ES6 Destructuring
+//permite descontruir um array ou passar todos os elementos para uma variavel
+
+
+// como é antes do destructuring
+function teste(){
+    let nomes = ['vitor', 'gi', 'ariella'];
+    let n1 = nomes[0];
+    let n2 = nomes[1];
+    let n3 = nomes[3];
+
+    document.write(n1 + " - " + n2 + " - " + n3);
+}
+
+//como é depois do destructuring
+function teste1(){
+    let nomes = ['vitor', 'gi', 'ariella'];
+    let [n1,n2,n3] = nomes;
+    //pronto é só isso
+
+    document.write(n1 + " - " + n2 + " - " + n3);
+
+}
+
+// outro exemplo de antes do destructuring (com objeto)
+
+function teste2(){
+    let pessoa = {
+        nome: "vitor",
+        idade: 28,
+        nacionalidade: "brasileiro"
+    };
+    //descontrui pessoa para ficar em variaveis (sem o destructuring)
+    let nome = pessoa.nome;
+    let idade = pessoa.idade;
+    let nacionalidade = pessoa.nacionalidade;
+}
+
+
+// com destructuring
+
+function teste2(){
+    let pessoa = {
+        nome: "vitor",
+        idade: 28,
+        nacionalidade: "brasileiro"
+    };
+    //descontrui pessoas com o destructuring para por em variaveis
+    let {nome, idade, nacionalidade} = pessoa;    
+    document.write(nome); //aqui eu posso ir colocando nome ou idade ou nacionalidade
+    // ou
+    let {nome, nacionalidade} = pessoa;
+    document.write(nome + " - " + nacionalidade);
+
+}
+
+// OBS LEMBRE-SE aqui eu coloquei let [n1,n2,n3] = nomes; "[]" pois era ARRAY
+// NO OBJETO EU COLOCO ASSIM let {nome, idade, nacionalidade} = pessoa; "{}"
+
+
+// outro exemplo (imagine que tem uma framework que fez o array, entao podemos destrutura-la e transformar em variaveis como o exemplo abaixo)
+
+function teste3(){
+    //let nomes = ['vitor', 'gi', 'ariella'];
+    let valores = frameworks.valoresServer(); // exemplo de um framework que contem um array, apenas para simualação (claro que o nome não vai ser assim)
+
+    let[a,b] = nomes; //no array posso dar o nome que quiser pode ser a,b ou n1 ,n2 ou du, dudu enfim...
+    document.write(a + " - " + b);
+}
+
+// um ultimo exemplo
+
+function teste4() {
+    let valores = [1,2,3];
+
+    //imagine que tem um array com valores numericos e a gente vai tentar alterar os valores no destructuring
+    //olhe tambem que o D,E não tem no array acima
+    let [a = 10, b = 10, c = 10, d = 50, e] = valores;
+    document.write(a + " - " + b + " - " + c + " - " + d + " - " + e); 
+    //repare que o resultado deu assim (1 - 2 - 3 - 50 - undefined)
+    //deu certo o destructuring porém não deu para atribuir um novo valor, deu somente no D porque ele não existia no array, nos que incluimos no destructuring
+    //repare tambem o E, ele não foi definido com um valor (como ele nao tem no array a gente implemento no destructuring sem falor e deu undefined)
+}
