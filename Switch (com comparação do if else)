@@ -1,0 +1,58 @@
+// SWITCH
+
+// No switch eu posso colocar 2 cases para ter o mesmo atributo como o exemplo abaixo
+
+const imprimirResultado = function (nota) {
+    switch(Math.floor(nota)){ // switch não retorna verdadeiro ou falso, ele retorna valor e tipos (//Math.floor arredondar para baixo)
+        case 10:
+        case 9:
+            console.log('Quadro de honra')
+            break
+        case 8: case 7: //repare que posso colocar 2 cases na mesma linha
+            console.log('Aprovado') 
+            break;
+        case 6: case 5: case 4: //agora repare como posso coloquei 3 cases na mesma linha
+            console.log('Recuperação')
+            break;
+        case 3: case 2: case 1: case 0: //agora repare como coloquei 4 cases na mesma linha
+            console.log('Reprovado')
+            break;
+        default:
+            console.log('Nota invalida')
+    }
+}
+
+imprimirResultado(10)
+imprimirResultado(8.9) //como usei o Math.floor ele vai arredondar para 8
+imprimirResultado(6.55)
+imprimirResultado(2.3)
+imprimirResultado(-1)
+imprimirResultado(11)
+
+
+// olha como esse codigo fica no if else if (repare que aqui o case é mais eficiente por ter menos linhas de codigo !)
+
+Number.prototype.entre = function (inicio, fim){
+    return this >= inicio && this <= fim
+}
+
+const imprimirResultado2 = function (nota) {
+    if(nota.entre(9, 10)) {
+        console.log('Quadro de honra')
+    } else if(nota.entre(7, 8.99)){ //note que no else if eu sempre preciso por (uma condição aqui), ja só no else não
+        console.log('Aprovado')
+    } else if(nota.entre(4, 6.99)){
+        console.log('recuperação')
+    } else if(nota.entre(0, 3.99)){
+        console.log('reprovado')
+    } else {
+        console.log('Nota invalida')
+    }
+}
+
+imprimirResultado2(10)
+imprimirResultado2(8.9)
+imprimirResultado2(6.99)
+imprimirResultado2(3.99)
+imprimirResultado2(-1)
+imprimirResultado2(11)
