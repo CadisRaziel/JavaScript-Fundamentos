@@ -1,0 +1,98 @@
+//Utilizando a estrutura IF
+
+function soBoaNoticia(nota){
+    if(nota >= 7){
+        console.log('Aprovado com ' + nota)
+    }
+}
+
+soBoaNoticia(8.1)
+soBoaNoticia(6.1)
+
+
+function seForVerdadeEuFalo(valor){
+    if(valor){
+        console.log('É verdade...' + valor)
+    }
+}
+
+//falsos
+seForVerdadeEuFalo();
+seForVerdadeEuFalo(null);
+seForVerdadeEuFalo(undefined);
+seForVerdadeEuFalo(NaN);
+seForVerdadeEuFalo('');
+seForVerdadeEuFalo(0)
+
+//verdadeiro
+seForVerdadeEuFalo(-1);
+seForVerdadeEuFalo(' ');
+seForVerdadeEuFalo('?');
+seForVerdadeEuFalo([]);
+seForVerdadeEuFalo([1, 2]);
+seForVerdadeEuFalo({})
+
+
+
+// IF part 2
+
+function teste1(num){
+    if(num > 7)
+    console.log(num)
+
+console.log('final')//essa linha de codigo não tem ligação nenhuma com o bloco IF
+}
+teste1(6)
+teste1(8)
+
+function teste2(num){
+    if(num > 7); { //cuidado ao por ; depois do if();
+        console.log(num)
+    }
+}
+teste2(6)
+teste2(9)
+
+
+
+// exemplos if/else
+
+const imprimirResultado = function(nota){
+    if(nota >= 7){
+        console.log('aprovado')
+} else {
+    console.log('reprovado')
+    }
+}
+imprimirResultado(10)
+imprimirResultado(6)
+imprimirResultado('epa') //cuidado como JS é fracamente tipado ele o 'epa' não vai dar erro, ele vai ser mostrado como reprovado
+
+
+
+// exemplos IF/ESE iF
+
+Number.prototype.entre = function (inicio, fim){
+    return this >= inicio && this <= fim
+}
+
+const imprimirResultado2 = function (nota) {
+    if(nota.entre(9, 10)) {
+        console.log('Quadro de honra')
+    } else if(nota.entre(7, 8.99)){ //note que no else if eu sempre preciso por (uma condição aqui), ja só no else não
+        console.log('Aprovado')
+    } else if(nota.entre(4, 6.99)){
+        console.log('recuperação')
+    } else if(nota.entre(0, 3.99)){
+        console.log('reprovado')
+    } else {
+        console.log('Nota invalida')
+    }
+}
+
+imprimirResultado2(10)
+imprimirResultado2(8.9)
+imprimirResultado2(6.99)
+imprimirResultado2(3.99)
+imprimirResultado2(-1)
+imprimirResultado2(11)
