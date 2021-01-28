@@ -1,0 +1,42 @@
+//ES6 Template literals
+
+function test(){
+    let pessoa = {
+        nome: 'vitor'
+    };
+
+    let automovel = {
+        marca: 'Audi',
+        ano: 2021
+    };
+
+    //sem template literals
+    //let frase = "Ola, Sr " + pessoa.nome + " O " + automovel.marca + " de " + automovel.ano + "é seu nesse momento.";
+    
+    
+    //com template literals (para isso utilize o acento gravo SHIFT + acento)
+    //repare que nao precisamos concatenar com "+"
+    let frase = `Olá, Sr. ${pessoa.nome}. O ${automovel.marca} de ${automovel.ano} é seu nesse momento.`;
+    document.write(frase);
+
+}
+//outro exemplo
+//repare que no primeiro ola mundo com "" eu nao posso fazer quebra de linha
+function test2(){
+    //document.write("ola
+    //                mundo")
+
+
+//porem com o acento gravo eu posso fazer a quebra de linha
+    document.write(`Ola
+    mundo!`)
+
+//porém cuidado no console ele vai pegar tambem todo espaço entre o ola e o mundo !
+    console.log(`ola
+                mundo`);
+
+//ja no document.getelement ele mostra sem os espaços
+    let elemento = document.getElementById("info");
+    elemento.innerHTML = `Ola
+                            mundo`;
+}
