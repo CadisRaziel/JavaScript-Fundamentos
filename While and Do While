@@ -1,0 +1,40 @@
+// While 
+
+// ela é bem usada para quando tem uma quantidade indeterminada de repetições (pode ser usado tambem para uma quantidade determinada de vezes)
+// exemplo enquanto a flag da interface grafica estiver falso fique verificando determinada informação... 
+
+//Lembre-se use a estrutura que mais se adeque a sua necessidade
+//exemplos repetição determinada de vezes = For
+//quantidade intederminada de vezes = While
+//seleção multipla = Switch
+
+function getInteiroAleatoriEntre(min, max) {
+    const valor = Math.random() * (max - min) + min
+    return Math.floor(valor)
+}
+
+let opcao = 0
+while (opcao != - 1) { //retorna verdadeiro ou falso
+    opcao = getInteiroAleatoriEntre(-1, 10) //vai gerar numero aleatorio entre -1 e 10, a hora que aparecer o -1 ele para
+    console.log(`Opção escolhida foi ${opcao}.`)
+} 
+
+console.log('Até amanha')
+
+
+
+// Exemplo DO while (dificilmente usado)
+
+
+function getInteiroAleatoriEntre1(min, max) {
+    const valor = Math.random() * (max - min) + min
+    return Math.floor(valor)
+}
+
+let opcao1 = -1 //se eu coloco -1 no while ele nao iria executar pois while (opcao != - 1) ele mesmo ja era -1, ja no "do" como o while fica no final, ele executa o bloco uma vez
+ do { // Repare que eu coloquei o "do" aqui e o "while" la no final retorna verdadeiro ou falso
+    opcao1 = getInteiroAleatoriEntre1(-1, 10) //vai gerar numero aleatorio entre -1 e 10, a hora que aparecer o -1 ele para
+    console.log(`Opção escolhida foi ${opcao}.`)
+} while (opcao1 != - 1) //no Do while ele fica depois do bloco , diferente do While que fica no inicio 
+
+console.log('Até amanha')
