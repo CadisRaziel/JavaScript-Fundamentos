@@ -1,0 +1,128 @@
+//ES6 Classes - parte 1
+
+//classes (imagine uma pessoa)
+// ela vai ter suas propriedades : nome, sobrenome, idade, altura, peso, cor dos olhos etc...
+// ela pode ter metodos (funcoes que executam um bloco de codigo):falar, correr, saltar etc..
+
+//constructor = é um metodo especial que é autometicamente executado sem que no nosso codigo nos criamos uma nova instancia dessa classe
+
+
+function teste(){
+    class pessoa{
+
+        constructor(nome, idade){
+            //document.write('Acabei de nascer')
+
+            //para usar o nome, idade usamos o seguinte passo:
+            this.nome = nome;
+            this.idade = idade;
+        }
+
+        adicionar(x, y){
+            return x + y;
+        }
+
+            //podemos acrescentar outros metodos (repare que nao precisamos colocar o function)
+            falar(){
+                return 'Eu falei';
+            }
+
+            //outro exemplo igual o de cima falar() porém com parametro
+            falar2(texto){
+                document.write(texto);
+            }
+        
+    }
+
+    //exemplo para usar com o document.write('Acabei de nascer')
+    //let eu = new pessoa(); //quando eu coloco esse codigo aqui, automaticamente vai executar o codigo dentro do constructor
+
+    //exemplo para usar com o constructor(nome, idade), this.nome = nome; this.idade = idade;
+    let eu = new pessoa('vitor', 28);
+    document.write(eu.nome + ' tem ' + eu.idade + 'anos de vida.'); // ou eu.idade
+
+
+    //exemplo para usar o falar() "lembrando que quando o () não tiver nenhum parametro, devemos por o () ali no falar"
+    document.write(eu.falar());
+
+    //exempro para usar o falar2() //como eu coloquei (texto) eu posso defini-lo abaixo como no exemplo
+    eu.falar2('Ola a todos');
+
+    //exemplo para usar o adicionar
+    document.write(eu.adicionar(10, 30));
+}
+
+
+
+// ES6 Classes - parte 2
+// Herança
+
+function teste1(){
+    //===================================================
+    class veiculo{
+        constructor(tipo){
+            this.tipo = tipo;
+        }
+
+        identificar(){
+            return 'Eu sou um ' + this.tipo;
+        }
+    }
+
+    let automovel = new veiculo('automovel');
+    document.write(automovel.identificar());
+
+
+    //outro exemplo (Herança de classes)
+    //===================================================
+    //extends = permite criar um objeto a partir de uma nova classe 
+    class automovel extends veiculo{
+        mudarMarcha(){
+            return 'Coloquei 2 marcha';
+        }
+    }
+
+    let auto = new automovel('automovel');
+    document.write(auto.mudarMarcha());
+
+    //outro exemplo (Herança de classes)
+    //===================================================
+    class aviao extends veiculo{
+        definirAltitude(valor){
+            //logica de codigo
+        }
+    }
+    let plane = new aviao('aviao'); //dentro do  new aviao(aqui precisamos por o tipo pois definimos la na classe principal)
+    document.write(plane.definirAltitude());
+
+
+    //OBSERVAÇÃO REPARE QUE TODOS AO POR document.write(auto.mudarMarcha()); ou document.write(plane.definirAltitude());
+    //logo após eu por um . em plane. ou auto. aparece o identificar(); pois ele é da classe principal
+    //como os outros exemplos todos são classes de herança podemos usar nelas
+}
+
+
+
+
+// outros exemplos com get e set (metodo especial)
+//get buscar
+//set define ou altera
+function teste2(){
+    class humano{
+        constructor(nome, idade){
+            this._nome = nome;
+            this._idade = idade;
+        }
+        get Nome(){ return this._nome;}      
+        set Nome(valor){ this._nome = valor;}   
+
+        get Idade(){ return this._idade;}         
+        set Idade(valor){ this._idade = valor;}
+    }
+    let homem = new humano('vitor', 28);
+    homem.Nome = 'Brussolo Zerbato' //set
+    homem.Idade = 28; //set
+    document.write(homem.Idade); //get
+    document.write(homem.Nome);//get
+    
+}
