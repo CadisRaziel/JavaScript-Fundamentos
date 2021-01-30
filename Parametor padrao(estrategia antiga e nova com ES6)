@@ -1,0 +1,39 @@
+// parametro padrao
+
+
+
+//estrategia 1 para gerar valor padrao
+//JS puro sem usar o recurso do ES6 \/
+function soma1(a, b, c){ //modo mais famoso e muito usado hoje em dia (porém é antiga, use o ES6)
+    a = a || 1
+    b = b || 1
+    c = c || 1
+    return a + b + c
+}
+console.log(soma1(), soma1(3), soma1(1, 2, 3), soma1(0, 0, 0,))
+
+//estrategia 2, 3 e 4 para gerar valor padrao
+function soma2(a, b, c){
+    a = a !== undefined ? a : 1
+    b = 1 in arguments ? b : 1 //aqui estou perguntado, dentro de arguments existe o indice 1?
+    c = isNaN(c) ? 1 : c // aqui estou perguntando se a variavel C for not a number NaN ela volta para o valor padrao que é 1, e caso ela for um numero ela retorna como o valor padrao C
+    return a + b + c
+}
+// c = isNaN(c) ? 1 : c = versão mais segura que vai trazer menos bug
+console.log(soma2())
+console.log(soma2(3))
+console.log(soma2(1, 2, 3))
+console.log(soma2(0, 0, 0))
+
+
+
+
+
+//usando o valor padrao do ES6 \/ (use sempre a versão mais nova)
+function soma3(a = 1, b = 1, c = 1){
+    return a + b + c
+}
+console.log(soma3())
+console.log(soma3(3))
+console.log(soma3(1, 2, 3))
+console.log(soma3(0, 0, 0))
