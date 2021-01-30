@@ -1,0 +1,37 @@
+//Função em JS é First-Class Objetic (Citizens)
+//Higher-order function (função de alta ordem) 
+
+
+//Criar uma função de forma literal (padrao de se usar)
+function fun1() { }
+
+//armazenar uma função em uma variavel
+const fun2 = function () { }
+
+//armazenar uma função dentro de um array
+const array1 = [function (a, b) { return a + b}]
+// ou
+const array = [function (a, b) { return a + b}, fun1, fun2] //posso armazenar varias funções (função no array é mais frequente ve uma função na variavel e depois passada para a função array)
+console.log(array[0](2, 3))
+
+//armazenar em um atributo de objeto 
+const objeto = {}
+objeto.falar = function() { return 'opa'}
+console.log(objeto.falar())
+
+//passar uma função com parametro para outra função
+function run(fun) { 
+    fun()
+}
+run (function () { console.log('Executando.....') })
+
+//uma função pode retornar/conter uma outra função
+function soma(a, b){ 
+    return function(c) {
+        console.log(a + b + c)
+    }   
+}
+soma(2, 3)(4) //soma(2, 3) = function soma, (4) = return function (c)
+// ou eu posso por em variaveis
+const cincoMais = soma(2, 3)
+cincoMais(4)
