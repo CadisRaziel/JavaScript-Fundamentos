@@ -1,0 +1,62 @@
+//This
+
+function teste(){
+    //quando eu crio uma função padrao, ao utilizar o this ele pode varias de quem chamou a função(ele não sera exclusivo só daqui como no c#)
+}
+
+const f3 = () => console.log(this === window)
+//quando eu defino com arrow, ele deixa o this exclusivo para a função, ele não varia nunca.
+
+
+
+
+// this função "bind"
+const pessoa = {
+    saudacao: 'Ola humanos',
+    falar(){
+        console.log(this.saudacao) //esse this pega o objeto todo pessoa (se eu nao usar o this ele nao pega a pessoa e da um erro)
+    }
+}
+pessoa.falar()
+
+//se eu tentar armazenar a função falar em uma variavel, o this não vai seguir ela (nao esta chamando a função falar a partir do contexto obetjo pessoa)
+const falar = pessoa.falar //aqui vai dar undefined
+falar()
+
+//o que posso fazer é o seguinte (usar o bind para amarrar a variavel a função que tem o objeto junto com o this)
+const pessoaFalar = pessoa.falar.bind(pessoa)
+pessoaFalar()
+
+
+//exemplo 2 de this função bind
+
+function people(){
+    this.idade = 0
+
+//setInterval = a cada 1000 milesegundos essa função sera disparada novamente e vai ficar executando em 1000 e 1000 milesegundos
+    setInterval(function(){
+        this.idade++
+        console.log(this.idade)
+    }.bind(this), 1000) //se eu nao coloco o .bind(this) iria dar NaN, mais se eu coloco o .bind(this) ele vai ser amarrado na função people
+}
+new people
+//ctrl + alt + n = pra executar
+//ctrl + alt + m = para parar (para usar quando tiver função com temporizador igual o setInterval)
+
+
+
+
+
+// outro maneira de fazer o exemplo acima (podemos encontrar o self com uma certa frequencia)
+function people2(){
+    this.idade = 0
+
+    const self = this //o self pode substituir o .bind(this) porém ambos vai ter o mesmo efeito
+
+//setInterval = a cada 1000 milesegundos essa função sera disparada novamente e vai ficar executando em 1000 e 1000 milesegundos
+    setInterval(function(){
+        self.idade++
+        console.log(self.idade)
+    }, 1000) //se eu nao coloco o .bind(this) iria dar NaN, mais se eu coloco o .bind(this) ele vai ser amarrado na função people
+}
+new people
