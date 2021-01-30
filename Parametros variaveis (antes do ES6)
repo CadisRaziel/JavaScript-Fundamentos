@@ -1,0 +1,16 @@
+//Parametros variaveis
+
+
+//arguments = array interno de uma função
+function soma(){
+    let soma = 0
+    for(let i in arguments){
+        soma += arguments[i]
+    }
+    return soma
+}
+console.log(soma())
+console.log(soma(1))
+console.log(soma(1.1, 2.2, 3.3)) //vai somar todos os elementos
+console.log(soma(1.1, 2.2, 3.3, "Teste")) //vai somar todos e concatenar com o teste
+console.log(soma('a', 'b', 'c')) //vai concatenar com o let soma = 0
