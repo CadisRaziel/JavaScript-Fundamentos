@@ -1,0 +1,40 @@
+// BREAK and CONTINUE
+
+//Break = pose ser usado no SWITCH / FOR / WHILE 
+//Continue = pode ser usado no FOR / WHILE 
+
+//tentar evitar seus usos (exeção do switch com o break)
+
+const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+for (let x in nums){
+    if(x == 5) {
+        break //lembre-se que quando tem apenas 1 linha do codigo pode-se se usar o break
+    }
+    console.log(`${x} = ${nums[x]}`) //repare que sempre que eu for fazer o ${ eu preciso por o indice que eu defini no let[x]}
+    // repare tambem que o ${x} vai mostrar o indice, ou seja 0 = 1, 1 = 2, 2 = 3 etc... (se nao quisese mostar era só ter deixado apenas o x)
+}
+
+//o break não age em cima do bloco if, ele vai agir sobre o bloco mais proximo dele, que é o for la em cima
+
+
+
+// faz mais sentido usar o continue em cima de estruturas de repetição o for e while
+for (let y in nums) {
+    if(y == 5) {
+        continue // o continue vai interromper a repetição atual e vai para proxima repetição 
+    }
+    console.log(`${y} = ${nums[y]}`)
+}
+
+
+//colocando um rotulo no for (um nome para ele) para realizar 2 for em conjunto
+//não use esse tipo de estrutura (é somente para aprendizado mesmo)
+externo: for(let a in nums){
+    for(let b in nums) {
+        if(a == 2 && b == 3) {
+            break externo //como defini break externo ele vai agir sobre o for let a (se nao colocase o externo ele iria agir sobre o for let b, que é o mais proximo dele)
+        }
+        console.log(`Par = ${a}, ${b}`)
+    }
+
+}
