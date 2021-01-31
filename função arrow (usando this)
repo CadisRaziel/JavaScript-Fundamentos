@@ -1,0 +1,74 @@
+//Arrow function (função arrow)
+
+//função normal 
+let dobro = function(a){
+    return 2 * a
+}
+
+//escrevendo no modo arrow
+dobro = (a) => {
+    return 2 * a
+}
+//função arrow é sempre anonima, caso eu queira chamar ela depois preciso armazenar em uma variavel como no exemplo, ou em uma const
+
+//reduzindo a arrow mais ainda (podemos tirar o () caso tenha só 1 parametro)
+dobro = a => 2 * a //quando tiramos o {} temos um return instantaneo
+// é muito util ter funções com somente uma linha de codigo como essa
+console.log(dobro(Math.PI))
+
+
+// outro exemplo normal
+let ola = function (){
+    return 'Ola'
+}
+// função arrow
+ola = () => 'ola'
+console.log(ola())
+
+
+
+
+// Arrow PARTE 2
+
+
+// lembre-se numa function arrow o this é exclusivo da function arrow
+// na function normal o this é exclusivo apenas do bloco
+
+//veja como o this aponta para o objeto pessoa pegando o codigo todo com o arrow => (tem 2 funções no exemplo)
+// não precisamos chamar o bind ou fazer uma const self = bind
+function pessoa () {
+    this.idade = 0
+    setInterval(() =>{
+        this.idade++
+        console.log(this.idade)
+    },1000)
+}
+new pessoa 
+
+
+
+// Arrow PARTE 3
+// usando o bind
+ 
+//o this na função normal é global
+let comparaComThis = function (parametro){
+    console.log(this === parametro)
+}
+comparaComThis(global)
+
+const objeto = {}
+comparaComThis = comparaComThis.bind(objeto) // com o bind não fica global, fica local
+comparaComThis(global)
+comparaComThis(objeto) // por causa do bind o this no objeto fica local
+
+
+let comparaComArrow = parametro => console.log(this === parametro)
+comparaComArrow(global) //o this na arrow nao fica global
+//o this no arrow aponta para o objeto deixando o this local
+
+
+
+//usando arrow com bind só para teste
+comparaComArrow = comparaComArrow.bind(objeto) //mesmo com o bind a arrow function é superior e fica estavel sendo local
+comparaComArrow(objeto) 
+comparaComArrow(module.exports) // para verificar se da false (se der false ele ta apontando para o objeto)
