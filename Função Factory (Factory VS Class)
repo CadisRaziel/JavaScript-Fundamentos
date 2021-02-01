@@ -1,0 +1,81 @@
+//Função factory (função fabrica)
+//factory é uma função que retorna um objeto (repare que nao colocamos new nela)
+
+const prod1 = {
+    nome: 'Coca',
+    preco: 6
+
+}
+const prod2 = {
+    nome: 'Guarana',
+    preco: 4
+
+}
+
+// ao invez de criar varios objetos como acima, podemos utilizar a função factory
+//exemplo da função abaixo
+//factory simples 
+function Criar_pessoa() {
+    return {
+        nome: 'Coca',
+        preco: 6 
+    }
+}
+console.log(Criar_pessoa())
+
+
+// exemplo da função com parametros
+function Criar_produto(nome, preco){
+    return {
+        nome: nome,
+        preco: preco        
+        
+    }
+}
+console.log(Criar_produto('Guarana', 4 ))
+
+//a função acima criei sozinho pois era um desafio, a função que o professor criou esta abaixo
+function CriarProduto(nome, preco){
+    return {
+        nome,
+        preco,
+        desconto: 0.1
+    }
+}
+console.log(CriarProduto('Notebook', 2199.99))
+console.log(CriarProduto('Monitor', 599,99))
+console.log(CriarProduto('Placa de video GTX', 1200))
+
+
+
+
+//Classe VS função factory
+
+
+//contras da classe, o this quando jogado no console do browser só encontra apenas 1 this, o console.log(`Meu nome é ${this.nome}`) .nome não é achado
+class Pessoa {
+    constructor(nome) {
+        this.nome = nome
+    }
+    falar(){
+        console.log(`Meu nome é ${this.nome}`) //tenho que por o "this" pois o nome esta acossiado a classe Pessoa, e estou colando o nome em um Metodo falar()
+    }
+}
+const p1 = new Pessoa('Vitor')
+p1.falar()  
+
+
+
+//fazendo em forma de função arrow (factory)
+//aqui ja nao corremos o risco de nao encontrar o this como na Classe acima
+const pessoa = (nome) => {
+    return {
+        falar: () => console.log(`Meu nome é ${nome}`)
+    }
+}
+const p2 = new Pessoa('BZ')
+p2.falar()
+
+
+//conclusão o modo factory não precisa ser colocado "this"
+// a classe ja é preciso por o "this" o que pode ocasionar erros
