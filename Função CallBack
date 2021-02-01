@@ -1,0 +1,56 @@
+// Função call back (chamar de volta) É MUITO UTILIZADA
+//parte 1
+
+const fabricantes = ['mercedes', 'audi' , 'bmw']
+
+function imprimir(nome, indice) {
+    console.log(`${indice +1} .${nome}`)
+}
+
+//chamando a função (quando crio um array eu tenho essa opção do forEach)
+fabricantes.forEach(imprimir)
+//ou podemos fazer com uma função o (a) sera o imrpimir (porém ele não vai mostrar os indices, apenas o nome)
+fabricantes.forEach(function (fabricante) {
+    console.log(fabricante)
+})
+//ou em uma função arrow
+fabricantes.forEach(fabricante => console.log(fabricante))
+
+
+//Callback parte 2
+
+
+const notas = [7.7, 6.5, 5.2, 8.9, 3.6, 7.1, 9.0]
+
+//sem callback
+const notasBaixas1 = []
+for(let i in notas){
+    if(notas[i] < 7){ //com o push todas as notas menor que 7 vao ser incluidas no array vazio de notasBaixas
+        notasBaixas1.push(notas[i]) //para adicionar um elemento no array coloque o push
+    }
+}
+console.log(notasBaixas1)
+
+//com Callback (o filter não altera o array original, ele cria um novo)
+const notasBaixas2 = notas.filter(function (nota) {
+    return nota <= 7
+})
+console.log(notasBaixas2)
+
+
+//usando com o arrow
+const notasBaixas3 = notas.filter(not => not < 7)
+console.log(notasBaixas3)
+
+//usando o arrow com uma const
+const notaMenorQue7 = notinha => notinha < 7 //uma função dentro da const que podemos reutilizar caso precise em outros locais
+const notasBaixa4 = notas.filter(notaMenorQue7)
+console.log(notasBaixa4)
+
+
+//callback parte 3 
+//exemplo de callback (testando no console do browser) é só copiar o codigo abaixo e colar no console do browser
+
+document.getElementsByTagName('body')[0].onclick = function () {
+    console.log('O evento ocorreu!')
+}
