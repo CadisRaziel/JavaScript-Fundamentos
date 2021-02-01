@@ -1,0 +1,15 @@
+//IIFE = Imediately Invoked Function Expression (imediatamente invocada !)
+//função auto invocada (fugindo do escopo global no browser)
+//o trecho de codigo é executado em escopo local da função 
+
+//é muito usado ! 
+//podemos definir dentro dela: const, variavel, outras funções 
+
+(function () {
+    console.log('Será executado na hora!')
+    console.log('Foge do escopo mais abrangente, o global')
+})()
+
+
+(function ()){
+}) ()
