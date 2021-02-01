@@ -1,0 +1,18 @@
+// Contexto lexico 
+
+const valor = 'Global'
+function minhaFuncao() {
+    console.log(valor)
+}
+
+function exec() {
+    const valor = 'local'
+    minhaFuncao() 
+}
+
+exec()
+//ele só vai apresentar o Global, porque ? R:quando uma função foi declarada dentro do JS, ele não tem apenas o seu conteudo interno,
+// ela tambem tem consiencia do local que foi definida 
+//mesmo chamando a função em outro local, passando a função como parametro para outra função, ela carrega com sigo o contexto que foi escrita
+// ou seja, o valor mais proximo da função "minhaFuncao" é a const valor = 'Global'
+//repare que mesmo estando em outra funcition ela lembra de onde foi escrita e pega a const mais proxima dela(caso essa const estiver fora da function)
