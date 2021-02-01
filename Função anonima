@@ -1,0 +1,31 @@
+// funções anonimas (é uma função sem nome)
+
+//armazenando uma função anonima em uma const
+const soma = function (x, y) {
+    return x + y
+}
+
+//interagindo duas funções anonimas 
+// repare que o operacao = soma, vai pegar a função de cima e somar o a, b da função resultado e o a, b vao se transformar no x e y e retornar o valor da soma
+const imprimirResultado = function (a, b, operacao = soma) {
+    console.log(operacao(a, b))
+}
+imprimirResultado(3, 4)
+imprimirResultado(3, 4, function (x, y){ //isso é muito utilizado !! 
+    return x - y
+    //repare que posso criar uma função anonima como 3 parametro (uma função anonima diretamente para outra função anonima)
+})
+//obs ele deixa de usar a função soma e usa a função passada como terceiro parametro /\
+
+
+//exemplo com arrow
+imprimirResultado(3, 4, (x, y) => x * y) //utilizando arrow function para criar uma outra função como no exemplo acima
+
+
+//exemplo no objeto de funçao anonima
+const pessoa = {
+    falar: function () {
+        console.log('falar')
+    }
+}
+pessoa.falar()
