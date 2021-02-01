@@ -1,0 +1,20 @@
+//Tipos de declaração
+
+
+console.log(soma(3, 4))
+//function declaration - muito usada
+// obs: antes de declarar a funcao soma eu posso chamar ela (porem na function expression e na named não podemos fazer isso)
+function soma(x, y) {
+    return x + y
+}
+
+
+//function expression (armazenando uma function anonima em uma constante) - muito usada
+const novaFuncao = function (x, y) {
+    return x - y
+}
+
+//named function expression(armazena uma function "nomeada" em uma constante) - pouco usada
+const novaFuncao1 = function funcao(x, y) {
+    return x * y
+}
