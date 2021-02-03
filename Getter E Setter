@@ -1,0 +1,22 @@
+// Getters / Setters (encapsulamento)
+//acessando atributos de um obejto privado (fazemos isso para controlar que o usuario não coloque por exemplo dia 60, idade -1)
+
+//são funções
+// get()
+// set()
+
+const sequencia = {
+    _valor: 1, //colocando o _ voce esta mostrando para os outros dev que é uma variavel para acessar internamente, (voce ta fazendo uma convenção )
+    get valor() {return this._valor++ },
+    set valor(valor) { //{ this._valor = valor}
+        if(valor > this._valor) {
+            this._valor = valor
+        }
+    }
+
+}
+
+console.log(sequencia.valor, sequencia.valor)
+
+sequencia.valor = 1000
+console.log(sequencia.valor, sequencia.valor)
