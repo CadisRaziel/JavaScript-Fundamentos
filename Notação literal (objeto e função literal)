@@ -1,0 +1,44 @@
+// Notação literal
+
+const a = 1
+const b = 2
+const c = 3
+
+//antes do ES6
+const obj1 = { a: a, b: b, c: c }
+
+//depois do ES6
+const obj2 = { a, b, c }
+
+console.log(obj1, obj2)
+
+
+//antes do ES6
+const nomeAttr = 'nota'
+const valorAttr = 7.87
+const obj3 = {}
+obj3[nomeAttr] = valorAttr
+console.log(obj3)
+
+//depois do ES6
+const nomeAt = 'nota'
+const valorAt = 7.87
+const obj4 = {[nomeAt]: valorAt}
+console.log(obj4)
+
+
+//definindo funções dentro do objeto literal antes do ES6
+const obj5 = {
+    funcao1: function() {
+        //...
+    }
+}
+
+//definindo funções dentro do objeto literal depois do ES6
+const obj6 = {   
+    funcao2() {
+
+    }
+}
+
+console.log(obj5, obj6)
