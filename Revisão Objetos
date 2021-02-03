@@ -1,0 +1,53 @@
+// revisão 
+
+
+//coleção dinamica de pares/valor
+const produto = new Object();
+produto.nome = 'Cadeira' //posso atribuir um valor assim
+produto['marca do produto'] = 'Notebook' // ou com identificadores 
+produto.preco = 220
+
+console.log(produto)
+
+
+//podemos deletar atributos do objeto
+delete produto.preco
+delete produto['marca do produto']
+console.log(produto)
+
+
+
+//outro exemplo
+const carro = {
+    modelo: 'A4',
+    valor: 89000,
+    proprietarios: {
+        nome: 'vitor',
+        idade: 28,
+        endereço: {
+            rua: 'abc',
+            numero: 123
+        }
+    },
+    condutores: [{ //objeto com array dentro de um objeto
+        nome: 'Joao',
+        idade: '19'
+    }, {
+        nome: 'ana',
+        idade: 20
+    }],
+    calcularValorSeguro: function () {
+        //codigo aqui
+    } 
+}
+
+carro.proprietarios.endereço.numero = 1000
+//ou posso fazer assim \/ para acessar os atributos a partir de strings (porém e muito mais trabalhosa e util)
+//carro['proprietario']['endereço']['rua'] = 'Av nossa senhora da paz'
+console.log(carro)
+
+//podemos deletar atributos, porém cuidado tudo que estiver em baixo é automaticamente deletado !!
+delete carro.condutores
+delete carro.proprietarios.endereço
+delete carro.calcularValorSeguro
+console.log(carro)
