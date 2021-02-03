@@ -1,0 +1,21 @@
+//Objetos Constantes
+
+const pessoa = {nome: 'vitor'}
+pessoa.nome = 'gi'
+console.log(pessoa)
+
+// eu não posso alterar o 'const pessoa' porém o objeto dentro dela eu posso que seria o 'vitor'
+
+//abaixo vai dar erro, porque atribui um novo objeto a constante, porem a constante não pode ser atribuida mais, pois ja foi atribuida la em cima
+//pessoa = {nome: 'joao'}
+
+
+//congelando o objeto, sendo assim não posso mais mexer no objeto pessoa
+Object.freeze(pessoa) //nao deixa excluir, alterar, etc..
+pessoa.nome = 'Ari'
+console.log(pessoa.nome)
+
+//criando um objeto para NUNCA ser alterado (nem o pessoaCnstante, nem o nome: 'BZ')
+const pessoaCnstante = Object.freeze({nome: 'BZ'})
+pessoaCnstante.nome = 'Jesus' //não vai ser alterado para jesus
+console.log(pessoaCnstante)
