@@ -1,0 +1,44 @@
+//funções importantes dentro do objeto
+
+const pessoa = {
+    nome: 'Beca',
+    idade: 2,
+    peso: 10
+}
+console.log(Object.keys(pessoa))
+console.log(Object.values(pessoa))
+console.log(Object.entries(pessoa)) //vai mostrar ['nome', 'Beca] ['idade, 2] etc.. ele vai mostrar em forma de array
+
+Object.entries(pessoa).forEach (e => {
+    console.log(`${e[0]}: ${e[1]}`)
+})
+//o forEach vai mostrar assim
+//nome: Beca
+//idade: 2
+//peso: 10
+
+// ou um jeito mais facil usando o destructuring
+Object.entries(pessoa).forEach (([chave, valor]) => {
+    console.log(`${chave}: ${valor}`)
+})
+
+
+
+//um exemplo MUITO importante, enumerable, writable e value para ter mais constrole sobre os objetos
+Object.defineProperty(pessoa, 'dataNascimento', {
+    enumerable: true, //vai ser possivel ser listada exp Objetc.keys
+    writable: false, // false não vai permitir ser alterada
+    value: '01/01/2020'
+})
+
+pessoa.dataNascimento = '02/02/2021' //como eu coloquei writable false, ele nao permite ser alterado, veja que vai assumir o '01/01/2020'
+console.log(pessoa.dataNascimento)
+console.log(Object.keys(pessoa)) //como eu defini como enumerable true, ele vai ser apresentado 
+
+//Object.assign(ES6)
+const destino = { a: 1}
+const o1 = { b: 2}
+const o2 = { c: 3, a: 4} //o valor a ja existia ou seja ele vai sobreescrever então vai passar ser a: 4
+const obj = Object.assign(destino, o1, o2)
+// quando eu defino ali dest, o1, o2, o dest vai receber os valores de o1 e o2 (ou seja concatenar)
+console.log(obj)
