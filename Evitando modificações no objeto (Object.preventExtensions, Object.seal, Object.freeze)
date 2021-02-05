@@ -1,0 +1,29 @@
+//Evitando modificações indevidas
+
+//Object.preventExtensions = vai previnir(não vai permitir) que o projeto seja extendido, nao vamos conseguir adicionar novos atributos no objeto (porém pode ser modificado e deletado)
+
+const produto = Object.preventExtensions({
+    nome: 'Qualquer', preco: 1.99, tag: 'Promoção'
+})
+
+//para conferir se produto podemos extender
+console.log('Extensivel', Object.isExtensible(produto))
+
+produto.nome = 'Borracha' //eu posso alterar o valor dos atributos !! 
+produto.descricao = 'Borracha escolar branca' //essa linha não existe no produto
+delete produto.tag //porém eu posso excluir coisas do produto, o que eu não posso é atribuir coisas 
+console.log(produto)
+
+
+// Object.seal = selar o objeto, selando não conseguimos adicionar novos atributos, não consegue deletar atributos, porém podemos modificar
+const pessoa = { nome: 'vitor', idade: 28}
+Object.seal(pessoa)
+
+//para saber se esta selado
+console.log('Selado:', Object.isSealed(pessoa))
+
+pessoa.idade = 18 //veja que posso modificar !! 
+console.log(pessoa)
+
+
+// Object.freeze = selado + valores constantes, não conseguimos incluir novos valores, não consegue excluir chaves do objeto e não consegue modificar os dados
