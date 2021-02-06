@@ -1,0 +1,19 @@
+// Json vs objeto !!
+
+//JSON = formato de dados(textual) entre sistemas (pode ser lido por qualquer linguagem)
+
+
+const obj = { a: 1, b: 2, c: 3, soma() { return a + b + c } }
+console.log(JSON.stringify(obj))
+//quando convertemos em json(texto), note que o return a + b + c (o calculo) foi excluido 
+//isso acontece porque é um formato de dados, e não executados.
+
+
+
+//transformando JSON em objeto 
+// console.log(JSON.parse("{ a: 1, b: 2, c: 3}")) aqui é um jeito errado de fazer 
+// console.log(JSON.parse("{ 'a': 1, 'b': 2, 'c': 3")) aqui é outro jeito errado de fazer 
+console.log(JSON.parse('{ "a": 1, "b": 2, "c": 3}')) //essa é a forma correta de transforma JSON em objeto (objeto gerado a partir de um texto JSON)
+
+//o que o JSON suporta (tudo isso abaixo é suportado pelo JSON porém respeitando os '' e os "")
+console.log(JSON.parse('{"a": 1.7, "b": "string", "c": true, "d": {}, "e": [] }'))
