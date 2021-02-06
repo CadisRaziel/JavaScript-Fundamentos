@@ -1,0 +1,61 @@
+// Classes
+//Observação, quando criamos a classe e colocamos {} ela vira uma função
+
+class Lancamento{
+    constructor(nome = 'Generico', valor = 0){ //constructor para chamar o "new"
+        this.nome = nome
+        this.valor = valor
+    }
+}
+
+class CicloFinanceiro{
+    constructor(mes, ano){
+        this.mes = mes
+        this.ano = ano
+        this.lancamentos = []
+    }
+
+    AdicionarLancamento(...lancamentos){
+        lancamentos.forEach(l => this.lancamentos.push(l)) // l = lancamentos
+    }
+
+    sumario() {
+        let valorConsolidado = 0
+        this.lancamentos.forEach(l => {
+            valorConsolidado += l.valor
+        })
+        return valorConsolidado
+    }
+}
+
+const salario = new Lancamento('Salario', 45000)
+const contaLuz = new Lancamento('Luz', -220)
+
+const conta = new CicloFinanceiro(6, 2020)
+conta.AdicionarLancamento(salario, contaLuz)
+console.log(conta.sumario())
+
+
+// Classe PARTE 2 (herança)
+
+class Avo {
+    constructor(sobrenome){
+        this.sobrenome = sobrenome
+    }
+}
+
+class Pai extends Avo { //pai tera as propriedades de avo
+    constructor(sobrenome, profissao = 'Professor') {
+        super(sobrenome) //lembrando que o super ligamos aqui ao this.sobrenome de Avo
+        this.profissao = profissao //quando faço this.profissao eu estou atribuindo profissao ao objeto que foi instanciado
+    }
+}
+
+class Filho extends Pai {
+    constructor() {
+        super('BZ')
+    }
+}
+
+const filho = new Filho
+console.log(filho)
