@@ -1,0 +1,59 @@
+//filter = filtrar um array (um subarray)
+//imagine assim, a quero todos os alunos que tenha nota maior que 7, use o filter etc..
+
+const produtos = [
+    { nome: 'Notebook', preco: 2499, fragil: true},
+    { nome: 'IpadPro', preco: 4199, fragil: true},
+    { nome: 'Copo de vidro', preco: 12.49, fragil: true},
+    { nome: 'Copo de plastico', preco: 18.99, fragil: false},
+]
+
+console.log(produtos.filter(function (produ) {
+    //return false //se eu retornar false ele nao vai mostrar nenhum elemento
+    //return true //retornando true ele mostra todos os elementos 
+
+    //filtrando
+    //return produ.preco > 2500
+    return produ.preco < 20
+   
+}))
+
+// ou filtrando assim
+
+const caro = prod => prod.preco >= 500
+const fragil = prod => prod.fragil //mais apresentar só os true
+console.log(produtos.filter(caro).filter(fragil))
+
+
+const barato = prodi => prodi.preco <= 20
+console.log(produtos.filter(barato))
+
+
+// criando o filter2
+
+
+//criando nosso filter2
+Array.prototype.filter2 = function(callback) {
+    const newArray = []
+    for(let i = 0; i < this.length; i++){
+        if(callback(this[i], i, this)) {
+            newArray.push(this[i])
+        }
+    }
+    return newArray    
+}
+
+const produtos = [
+    { nome: 'Notebook', preco: 2499, fragil: true},
+    { nome: 'IpadPro', preco: 4199, fragil: true},
+    { nome: 'Copo de vidro', preco: 12.49, fragil: true},
+    { nome: 'Copo de plastico', preco: 18.99, fragil: false},
+]
+
+const caro = prod => prod.preco >= 500
+const fragil = prod => prod.fragil //mais apresentar só os true
+console.log(produtos.filter2(caro).filter2(fragil))
+
+
+const barato = prodi => prodi.preco <= 20
+console.log(produtos.filter2(barato))
