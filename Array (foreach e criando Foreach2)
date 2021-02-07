@@ -1,0 +1,42 @@
+// Foreach ou forEach 
+
+const aprovados = ['Vitor', 'Gi', 'Rosana', 'Ariella']
+aprovados.forEach(function(nome, indice) { //lembrando que o indice sempre é passado como segundo parametro
+    console.log(`${indice + 1}) ${nome}`)
+})
+//o indice +1 vai servir para colocar 1), 2), 3), 4)
+
+
+const aprovados1 = ['Vitor', 'Gi', 'Rosana', 'Ariella']
+aprovados1.forEach(function(nome, indice, array) { //podemos passar o array como parametro, ele vai retornar array
+    console.log(`${indice + 1}) ${nome}`)
+    console.log(array)
+})
+
+//usando arrow function
+aprovados.forEach(nome => console.log(nome))
+
+
+//usando uma const para armazenar a função e depois passar como parametro no forEach
+const exibirAprovados = aprovado => console.log(aprovado)
+aprovados.forEach(exibirAprovados)
+
+
+
+
+//------------------------- CRIANDO O FOREACH2 ----------------------------
+
+//foreach2....
+
+//criando o nosso proprio forEach2 (forEach2 não existe...)
+Array.prototype.forEach2 = function(callback) {
+    for(let i = 0; i < this.length; i++){
+        callback(this[i], i, this);
+    }
+}
+
+
+const aprovados = ['Vitor', 'Gi', 'Rosana', 'Ariella']
+aprovados.forEach2(function(nome, indice) { //lembrando que o indice sempre é passado como segundo parametro
+    console.log(`${indice + 1}) ${nome}`)
+})
