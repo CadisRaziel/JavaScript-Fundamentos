@@ -1,0 +1,82 @@
+// Função map = transformação do array
+//imagine que voce tem 1 array com o valor 2 , 4 ,6 e que criar um array com esses numeros multiplicados
+//voce usa o map e vai conseguir fazer um outro array com os valores 4, 6, 12
+
+// ou pega um objeto e transforma em um numero ou string
+//enfim ele pega um array original e transforma em um novo array (ele nao modifica o array original)
+// se o array original tem 6 elementos, o array map vai gerar um outro array com 6 elementos de dados transformados
+
+
+//transformando os numeros abaixo em seu dobro
+const nums = ['1', '2', '3', '4', '5']
+let resultado = nums.map(function (elemento) {
+    return elemento * 2
+})
+console.log(resultado)
+//console.log(resultado, nums) //=> veja que o array original nao foi modificado
+
+
+//chamando varios maps
+const soma10 = elemento => elemento + 10 //primeiro faz essa
+const triplo = elemento => elemento * 3 //depois faz essa 
+const paraDinheiro = elemento => `R$ ${parseFloat(elemento).toFixed(2).replace('.', ',')}` //por ultimo faz essa(resultado final)
+resultado = nums.map(soma10).map(triplo).map(paraDinheiro)
+//resultado = nums.map(triplo).map(soma10).map(paraDinheiro) //posso por sem estar na ordem
+console.log(resultado)
+//o resultado final depois de fazer as 3 operações das 3 const vai ser esse
+//[ 'R$ 630,00', 'R$ 1230,00', 'R$ 1830,00', 'R$ 2430,00', 'R$ 3030,00' ]
+
+
+
+
+//atividade 
+
+//atividade, transformar o json em objeto e apresentar somente o preco 
+
+//O array esta em JSON (lembrando que array é um objeto no js)
+const carrinho = [
+    '{ "nome": "Borracha", "preco": "3.45" }',
+    '{ "nome": "Caderno", "preco": "13.90" }', 
+    '{ "nome": "Kit de lapis", "preco": "41.22" }', 
+    '{ "nome": "Caneta", "preco": "7.50" }'
+]
+
+//retornar um array apenas com os preços
+//preciso fazer o json.parse para transformar em um objeto
+const paraObjeto = json => JSON.parse(json)
+const apenasPreco = produto => produto.preco 
+
+const resultado = carrinho.map(paraObjeto).map(apenasPreco)
+console.log(resultado)
+
+
+
+//criando nosso map2
+
+//criando nosso proprio map2 (map2 nao existe)
+
+Array.prototype.map2 = function (callback) {
+    const newArray = [] //no map eu tenho que construir um novo array
+    for(let i = 0; i < this.length; i++) {
+        newArray.push(callback(this[i], i, this))
+    }
+    return newArray
+}
+
+
+
+//O array esta em JSON (lembrando que array é um objeto no js)
+const carrinho = [
+    '{ "nome": "Borracha", "preco": "3.45" }',
+    '{ "nome": "Caderno", "preco": "13.90" }', 
+    '{ "nome": "Kit de lapis", "preco": "41.22" }', 
+    '{ "nome": "Caneta", "preco": "7.50" }'
+]
+
+//retornar um array apenas com os preços
+//preciso fazer o json.parse para transformar em um objeto
+const paraObjeto = json => JSON.parse(json)
+const apenasPreco = produto => produto.preco 
+
+const resultado = carrinho.map2(paraObjeto).map2(apenasPreco)
+console.log(resultado)
