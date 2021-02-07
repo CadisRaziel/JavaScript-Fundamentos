@@ -1,0 +1,67 @@
+//Reduce = uma função que serve para transformar um array em um elemento ou em outro array ou em um numero ou em uma string
+
+const aluno = [
+    { nome: 'Vitor', nota: 7.3, bolsista: false},
+    { nome: 'Gi', nota: 9.2, bolsista: true},
+    { nome: 'Ariella', nota: 9.8, bolsista: false},
+    { nome: 'Rosana', nota: 8.7, bolsista: true}
+]
+
+console.log(aluno.map(a => a.nota)) // aqui vai mostrar as notas apenas[ 7.3, 9.2, 9.8, 8.7 ]
+
+//aqui ele vai somar 7.3 + 9.2 = 16.5 + 9.8 = 26.3 + 8.7 (como não tem mais notas o 8.7 nao vai somar)
+//como não passei um valor inicial para reduce ele pego os 2 primeiro valor e somou
+// o acumulardor foi o 7.3 e o atual 9.2
+const resultado = aluno.map(a => a.nota).reduce(function (acumulador, atual) {
+    console.log(acumulador, atual)
+    return acumulador + atual
+})
+
+console.log(resultado) //resultado das notas somadas
+
+
+//caso eu queria ter um valor inicial(acumulador) com valor 10 (sempre passe o valor 0 para nao esquecer)
+const resultado1 = aluno.map(a => a.nota).reduce(function (acumulador, atual) {
+    console.log(acumulador, atual)
+    return acumulador + atual
+}, 10) // => aqui vai o valor inicial
+
+console.log(resultado1)
+
+// atividade
+
+
+const aluno = [
+    { nome: 'Vitor', nota: 7.3, bolsista: false},
+    { nome: 'Gi', nota: 9.2, bolsista: true},
+    { nome: 'Ariella', nota: 9.8, bolsista: false},
+    { nome: 'Rosana', nota: 8.7, bolsista: true}
+]
+
+//desafio 1: Todos os alunos são bolsistas?
+const todosBolsista = (resultado, bolsista) => resultado && bolsista
+console.log(aluno.map(a => a.bolsista).reduce(todosBolsista))
+
+
+//desafio 2: Algum aluno é bolsista?
+const algunBolsista = (resultado, bolsista) => resultado || bolsista 
+// console.log(aluno.map(a => a.bolsista)) = vai retornar um array com todos
+console.log(aluno.map(a => a.bolsista).reduce(algunBolsista))
+
+
+// criando reduce2
+
+// Criando um reduce
+
+Array.prototype.reduce2 = function (callback, valorInicial) {
+    const indiceInicial = valorInicial ? 0 : 1
+    let acumulador = valorInicial || this[0]
+    for(let i = indiceInicial; i < this.length; i++) {
+        acumulador = callback(acumulador, this[i], i, this)
+    }
+    return acumulador
+}
+
+const soma = (total, valor) => total + valor
+const nums = [ 1, 2, 3, 4, 5, 6]
+console.log(nums.reduce2(soma, 21)) //o 21 ali representa o valorInicial
