@@ -1,0 +1,42 @@
+// array (o array é um objeto(função e com o new fica um objeto) no JS que organiza os atributos a partir de indice)
+
+
+console.log(typeof Array, typeof new Array, typeof [])
+
+
+//não é aconselhavel criar array dessa forma abaixo
+let aprovados = new Array('Vitor', 'gi')
+console.log(aprovados)
+
+//o mais recomendavel para criar um array é assim
+aprovados = ['Vitor', 'gi']
+console.log(aprovados[1])
+
+//adicionando um novo elemento dentro do array
+aprovados[2] = 'Ariella'
+
+//adicionando um novo elemento no final do array(forma correta)
+aprovados.push('BZ')
+console.log(aprovados.length)
+
+
+//adicionando um elemento na posição de indice 9
+aprovados[9] = 'Rosana'
+console.log(aprovados.length)
+//observação como eu tinha 4 elementos apenas e inseri o indice 9, os elementos 5,6,7,8 vao aparecer como undefined 
+
+console.log(aprovados) //empty items são os elementos undefined por conta que coloquei um elemento no indice 9
+
+aprovados.sort() //sort coloca em na ordem em que fomos incluindo mais elementos
+console.log(aprovados)
+
+//deletar um elemento a partir do indice(ele nao vai deletar o indice e sim somente o elemento(valor)) 
+delete aprovados[1]
+
+
+//splice = adicionar elemento em um indice, ela serve tambem para remover elementos de um array, ou adicionar e remover ao mesmo tempo
+aprovados = ['Vitor', 'gi', 'ari', 'rosana']
+aprovados.splice(1, 3) //ele vai excluir tudo que estiver na frente do indice 1 ou seja o indice 2 e o 3
+aprovados.splice(1, 2, 'Elemento1', 'Elemento2')// aqui a partir do indice 1 ele vai excluir o indice 2 e incluir 2 novos elementos
+aprovados.splice(1, 0, 'Elemento1', 'Elemento2') //caso eu nao queira excluir nenhum é só por o indice 0 
+console.log(aprovados)
