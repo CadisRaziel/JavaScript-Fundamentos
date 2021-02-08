@@ -1,0 +1,32 @@
+// Imperativo vs Declarativo
+
+const alunos = [
+    { nome: 'vitor', nota: 7.9},
+    { nome: 'gi', nota: 9.2}
+]
+
+//Imperativo (nos mostra como é feito)
+let total1 = 0
+for(let i = 0; i < alunos.length; i++) {
+    total1 += alunos[i].nota
+}
+
+console.log(total1 / alunos.length)
+
+
+//Declarativa (nos mostra o que tem que ser feito)
+const getNota = aluno => aluno.nota
+const soma = (total, atual) => total + atual
+//os dois metodos acima pode ser usado em outras soluções
+
+//aqui abaixo é aonde fica as operações
+const total2 = alunos.map(getNota).reduce(soma) //o reduce vai agregar os valores em 1 só
+console.log(total2 / alunos.length)
+
+
+//no sql é mais declarativo !!
+//Sql - SELECT codigo, nome, email FROM cliente WHERE activo = 1
+
+
+//as duas abordagem tanto imperativa quando declarativa voce chega no mesmo resultado
+//porém a declarativa é mais facil e melhor de utilizar 
