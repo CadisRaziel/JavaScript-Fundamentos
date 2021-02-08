@@ -1,0 +1,43 @@
+// aqui vamos criar duas turmas de uma escola
+// e as turmas tera seus conjunto de aluno
+// e vamos tentar extrair a nota de todos os alunos das duas turma
+
+//vamos usar o map
+
+
+const escola = [{
+    nome: 'TurmaM1',
+    alunos: [{
+        nome: 'Gustavo',
+        nota: 8.1
+    }, {
+        nome: 'Ana',
+        nota: 9.3
+    }]
+}, {
+    nome: 'TurmaM2',
+    alunos: [{
+        nome: 'Rebeca',
+        nota: 8.9
+    }, {
+        aluno: 'Roberto',
+        nota: 7.3
+    }]
+}]
+
+const getNotaAluno = aluno => aluno.nota
+const getNotasTurma = turma => turma.alunos.map(getNotaAluno)
+
+const notas1 = escola.map(getNotasTurma)
+console.log(notas1)
+
+//flatmap = queremos pegar todas as notas e colocar em um unico array, ao invez de varios
+Array.prototype.flatMap = function (callback) {
+    return Array.prototype.concat.apply([], this.map(callback))
+}
+
+const notas2 = escola.flatMap(getNotasTurma)
+console.log(notas2)
+
+//antes = [ [ 8.1, 9.3 ], [ 8.9, 7.3 ] ]
+//depois com flatmap = [ 8.1, 9.3, 8.9, 7.3 ]
