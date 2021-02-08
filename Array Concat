@@ -1,0 +1,14 @@
+//Concatenando arrays
+
+const filhas = ['Gi', 'Ariella']
+const filhos = ['vitor', 'bruno']
+const todos = filhas.concat(filhos)
+//const todos = filhas.concat(filhos, 'Jax') //posso colocar mais nomes na hora de concatenar
+console.log(todos)
+
+//ele consegue pegar um array vazio e concatenar os parametros colocados 
+console.log([].concat([1,2], [3,4], 5, [[6, 7]]))
+//ou
+console.log(['a', 'b'].concat([1,2], [3,4], 5, [[6, 7]]))
+
+// o concat é sempre gerado um NOVO array ! 
