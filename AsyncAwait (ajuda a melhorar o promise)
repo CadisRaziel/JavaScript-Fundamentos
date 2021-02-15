@@ -1,0 +1,41 @@
+//AsyncAwait = 
+
+const http = require('http') //o proprio node ja tem o http(então nao precisamos instalar nada)
+//http para obter o resultado das 3 urls
+
+const getTurma = letra => {
+    const url = `http://files.cod3r.com.br/curso-js/turma${letra}.json`
+    return new Promise((resolve, reject) => {
+        http.get(url, res => {
+            let resultado = ''
+
+            res.on('data', dados => {
+                resultado += dados
+            })
+
+            res.on('end', () => {
+                try {
+                    resolve(JSON.parse(resultado))
+                } catch (e) {
+                    reject(e)
+                }
+            })
+        })
+    })
+}
+
+// recusro do ES8
+//Objetivo de simplificar o uso de promises...
+
+
+//só podemos usar a palavra await quando definirmos o async como no exemplo abaixo
+let obterAlunos = async () => {
+    const TurmA = await getTurma('A')
+    const TurmB = await getTurma('B')
+    const turmC = await getTurma('C')
+    return [].concat(TurmA, TurmB, turmC)
+} //retorna um AsyncFunction (com isso consigo chamar a função then)
+
+obterAlunos()
+    .then(alunos => alunos.map(a => a.nome))
+    .then(nomes => console.log(nomes))
