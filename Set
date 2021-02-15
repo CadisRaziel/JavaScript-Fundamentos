@@ -1,0 +1,18 @@
+const { time } = require("console")
+
+//não aceita repetição e não é indexado (não tem um indice)
+const times = new Set()
+times.add('Palmeiras')
+times.add('Corinthias').add('Santos').add('Juventos').add('Barcelona')
+times.add('Palmeiras') //como o palmeiras ja existe, esse vai ser ignorado !!
+console.log(times)
+
+console.log(times.size) //para saber quantos times tem
+console.log(times.has('Palmeiras')) //para saber se tem o palmeiras
+times.delete('Corinthias')
+
+ //posso criar a partir de um array tradicional
+
+ const nomes = ['Vitor', 'Gi', 'Ariella', 'Rosana', 'Monique', 'Michele', 'Vitor'] //o vitor vai ser apresentado 1 vez só
+ const nomeSet = new Set(nomes)
+ console.log(nomeSet)
