@@ -1,0 +1,32 @@
+//let e const = usar essas duas variaveis
+//var = evitar o var pois é global
+
+{
+    var a = 2 // lembrando o var é visto dentro e fora da função 
+    let b = 3 // lembrando o let é visto apenas dentro da função
+    console.log(b) //dentro da função conseguimos imprimit o let b
+}
+console.log(a)
+//console.log(b)
+
+
+//------
+//Template String
+//podemos realizar quebra de linhas usando template
+const produto = 'Ipad'
+console.log(`${produto}
+ é 
+caro`)
+
+//------
+//operador Destructuring
+//desestruturar 
+//... = para concatenar 
+const [l, e, ...tras] = 'Cod3r'
+console.log(l, e, tras)
+
+const [x, y] = [1, 2, 3]
+console.log(x, y)
+
+const {idade, nome} = {nome: 'vitor', idade: 28}
+console.log(idade, nome)
