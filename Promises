@@ -1,0 +1,25 @@
+//Promisse = usamos quando precisamos de um processamento assincrono 
+//a promossa foi crumprida ou rejeitada 
+//imagine que vamos tentar acessar um arquivo remoto, uma das possibilidades de nos acessar esse arquivo, e apartir de uma callback
+// no promisse podemos ter o mesmo resultado do callback
+
+
+function falarDepoisDe(segundos, frase) {
+    return new Promise((resolve, reject) => { //o resolve é chamado quando a promisse é atendida 
+         setTimeout(() => { //setTimeout é só para simular um delay
+             resolve(frase) //resolve aceita apenas 1 unico parametro 
+         }, segundos * 1000)   
+    })  
+}
+
+falarDepoisDe(3, 'Que legal') //vai demorar 3 segundos por conta que coloquei o setTimeOut e depois vai concatenar com a frase abaixo
+    .then(frase => frase.concat('?!?')) //depois de 3 segundos ele vai concatenar Que legal com  ?!?
+    .then(outraFrase => console.log(outraFrase))
+
+//then = podemos criar uma nova frase (posso colocar quantos then eu quiser, e o resultado de um vai passando para o outro )
+//then = podemos usar map, filter...
+
+
+
+//tratando o erro reject
+.catch(e => console.log(e)) //ele vai mostrar a frase 'Que legal' porque eu defini no parametro como frase
