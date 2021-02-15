@@ -1,0 +1,101 @@
+// PRIMEIRO IREMOS MOSTRAR O EXEMPLO SEM PROMISE
+
+//Temo que obter 3 arquivos JSON  de 3 turma de alunos deiferente(tuma a, b, c)
+//turmaA = http://files.cod3r.com.br/curso-js/turmaA.json
+//turmaB = http://files.cod3r.com.br/curso-js/turmaB.json
+//turmaC = http://files.cod3r.com.br/curso-js/turmaC.json
+//a ideia é extrair o nome dos alunos desses 3 arquivos de json 
+
+//Exemplo sem promise..
+const http = require('http') //o proprio node ja tem o http(então nao precisamos instalar nada)
+//http para obter o resultado das 3 urls
+
+const getTurma = (letra, callback) => {
+    const url = `http://files.cod3r.com.br/curso-js/turma${letra}.json`
+    http.get(url, res => {
+        let resultado = ''
+
+        res.on('data', dados => {
+            resultado += dados
+        })
+
+        res.on('end', () => {
+            callback(JSON.parse(resultado))
+        })
+    })
+}
+//'A' , 'B' , 'C' para a variavel letra ser definida, e alunos que é a callback
+let nomes = []
+getTurma('A', alunos => {
+    nomes = nomes.concat(alunos.map(a => `A: ${a.nome}`))
+    getTurma('B', alunos => {
+        nomes = nomes.concat(alunos.map(a => `B: ${a.nome}`))
+        getTurma('C', alunos => {
+            nomes = nomes.concat(alunos.map(a => `C: ${a.nome}`))
+            console.log(nomes)
+        })
+    })
+})
+
+//===================================================================================================
+
+
+//AGORA IREMOS MOSTRAR O EXEMPLO COM PROMISE
+
+//Temo que obter 3 arquivos JSON  de 3 turma de alunos deiferente(tuma a, b, c)
+//turmaA = http://files.cod3r.com.br/curso-js/turmaA.json
+//turmaB = http://files.cod3r.com.br/curso-js/turmaB.json
+//turmaC = http://files.cod3r.com.br/curso-js/turmaC.json
+//a ideia é extrair o nome dos alunos desses 3 arquivos de json 
+
+//Exemplo COM promise..
+const { promises } = require('fs')
+const http = require('http') //o proprio node ja tem o http(então nao precisamos instalar nada)
+//http para obter o resultado das 3 urls
+
+const getTurma = letra => {
+    const url = `http://files.cod3r.com.br/curso-js/turma${letra}.json`
+    return new Promise((resolve, reject) => {
+        http.get(url, res => {
+            let resultado = ''
+
+            res.on('data', dados => {
+                resultado += dados
+            })
+
+            res.on('end', () => {
+                try {
+                    resolve(JSON.parse(resultado))
+                } catch (e) {
+                    reject(e)
+                }
+            })
+        })
+    })
+}
+//sem o promise
+//'A' , 'B' , 'C' para a variavel letra ser definida, e alunos que é a callback
+// let nomes = []
+// getTurma('A').then(alunos => {
+//     nomes = nomes.concat(alunos.map(a => `A: ${a.nome}`))
+//     getTurma('B').then(alunos => {
+//         nomes = nomes.concat(alunos.map(a => `B: ${a.nome}`))
+//         getTurma('C').then(alunos => {
+//             nomes = nomes.concat(alunos.map(a => `C: ${a.nome}`))
+//             console.log(nomes)
+//         })
+//     })
+// })
+
+//com o promise all
+//fazendo o codigo acima ficar mais simples (olha como fica muito mais simples)
+Promise.all([getTurma('A'), getTurma('B'), getTurma('C')])  
+    .then(turmas => [].concat(...turmas)) //aqui vou ter todas as turmas em um unico array    
+    .then(alunos => alunos.map(aluno => aluno.nome))
+    .then(nomes => console.log(nomes))
+    .catch(e => console.log(e.message))
+
+//testando o reject com uma turma que não existe
+getTurma('D').catch(e => console.log(e.message)) // vai aparecer isso "Unexpected token < in JSON at position 0"
+
+    
