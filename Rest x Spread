@@ -1,0 +1,22 @@
+//Rest = Pegar algo e juntar
+//Spread = Pegar algo e espalhar
+
+
+//rest com parametro de uma função
+function total(...numeros) {
+    let total = 0
+    numeros.forEach(n => total += n)
+    return total
+}
+console.log(total(2,3,4,5)) //ele vai juntar todos e somar 
+
+
+//usar spread com objeto
+const funcionaro = { nome: 'Vitor', salario: 1298.00 }
+const clone = { ativo: true, ...funcionaro } //...= esta espalhando todos os atributos de funcionario dentro de clone
+console.log(clone)
+
+//usar spread com array (vai juntar "espalhar" os dois arrays)
+const grupoA = ['joao', 'gloria', 'pedro']
+const grupoFinal = ['maria', 'rafaela', ...grupoA]
+console.log(grupoFinal)
