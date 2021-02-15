@@ -1,0 +1,38 @@
+
+const tecnologia = new Map()
+tecnologia.set('react', { framework: false })
+tecnologia.set('angular', { framework: true })
+
+console.log(tecnologia.get('react'))
+console.log(tecnologia.get('angular'))
+
+console.log(tecnologia.get('react').framework)
+
+
+//outro exemplo para pegar chave e valor dentro de array
+const chaveVariadas = new Map([
+    [function () { }, 'função'],
+    [{}, 'String'],
+    [123, 'Numero']
+])
+
+chaveVariadas.forEach((vl, ch) => {
+    console.log(ch, vl)
+})
+console.log(chaveVariadas.has(123))
+//has = verifica se o valor esta dentro do map
+
+chaveVariadas.delete(123)
+console.log(chaveVariadas.has(123))
+
+console.log(chaveVariadas.size)
+//size mostra quantos elementos estão dentro do map 
+
+
+//quando eu coloco um outro valor para uma chave existente, o ultimo valor é que sera apresentado
+chaveVariadas.set(123, 'a')
+chaveVariadas.set(123, 'b') //esse vai ser apresentado
+
+//colocando uma chave que nao existe ela vai ser inclusa no map 
+chaveVariadas.set(456, 'a')
+console.log(chaveVariadas)
