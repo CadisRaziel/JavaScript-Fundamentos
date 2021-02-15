@@ -1,0 +1,30 @@
+//ES8: Object.values = pega o valor     /Object.entries = pega a chave e valor
+
+const obje = { a: 1, b: 2, c: 3}
+console.log(Object.values(obje))
+console.log(Object.entries(obje))
+
+//Melhorias na notação literal
+const nome = 'Carla'
+const pessoa = {
+    //antes = nome: nome,
+
+    //agora \/
+    nome,
+    ole() {
+        return 'Oi gente'
+    }
+
+    //antes criando função ole: function () {}
+}
+console.log(pessoa.nome, pessoa.ole())
+
+
+//Classes = viram funções
+class Animal {}
+class cachorro extends Animal {
+    falar() {
+        return 'Au au'
+    }
+}
+console.log(new cachorro().falar())
