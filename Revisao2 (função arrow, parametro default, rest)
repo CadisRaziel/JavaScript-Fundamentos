@@ -1,0 +1,26 @@
+//função arrow ( são funções anonimas )
+const soma = (a, b) => a + b //repare que sem os {} eu nao preciso colocar return
+
+const soma2 = (c, d) => {
+    return c + d //repare que quando tempo um corpo {} precisamos por return 
+}
+console.log(soma(2,3))
+
+//função arrow (THIS no arrow aponta para dentro da função apeans)
+const lexico1 = () => console.log( this === exports) //dentro da função arrow o this sempre aponta para module.exports ou exports
+const lexico2 = lexico1.bind({}) //aqui estou tentando colocar o lexico1 com o this colocando dentro de um objeto usando o bind (o que não vai dar certo)
+
+//parametro default (eu posso por valor em um atributo ou seja: texto = 'Node')
+function log(texto = 'Node') {
+    console.log(texto)
+}
+log() // vai apresentar node
+log('se eu colocar outra string ele assume essa !') //ele vai assumir essa string se eu colocar assim
+
+//Operador rest = junta(ou soma)    
+function total(...numeros) {
+    let total = 0
+    numeros.forEach(n => total += n)
+    return total
+}
+console.log(total(2,3,4,5)) //ele vai juntar todos e somar 
