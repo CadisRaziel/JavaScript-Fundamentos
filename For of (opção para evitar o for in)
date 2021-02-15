@@ -1,0 +1,58 @@
+//Novo laço ForOF = impera em cima de valores
+
+for (let letra of "Cod3r") {
+    console.log(letra)
+}
+//vai mostrar letra por letra uma em cima da outra 
+
+
+//o for in percorre em cima de indice( ou seja, deveriamos apos isso buscar o valor )
+const assuntosEcma = ['Map', 'Set', 'Promisse']
+for (let i in assuntosEcma) {
+    console.log(i)
+}
+
+//agora com ForOF (ele nos mostra os valores do array)
+for (let assunto of assuntosEcma) {
+    console.log(assunto)
+}
+
+
+//em um map vai mostrar com chave e valor
+const assuntosMap = new Map([
+    ['Map', { abordado: true }],
+    ['Set', { abordado: true }],
+    ['Promisse', { abordado: false }]
+])
+for (let assunto1 of assuntosMap) {
+    console.log(assunto1)
+}
+
+//desestruturando (destructuring) para pegar chave e valor (sem o array)
+for (let [c, v] of assuntosMap) {
+    console.log(c, v)
+}
+
+
+//apresentando apenas as chaves
+for (chave of assuntosMap.keys()) {
+    console.log(chave)
+}
+
+//apresentando apenas os valores
+for (valor of assuntosMap.values()) {
+    console.log(valor)
+}
+
+
+//apresentando as entries (podemos apresentar chaves e valores sem estar em um array)
+for (let [ch, vl] of assuntosMap.entries()) {
+    console.log(ch, vl)
+}
+
+
+//podemos usar no Set tambem !! 
+const s = new Set(['a', 'b', 'c'])
+for (let letra of s) {
+    console.log(letra)
+}
