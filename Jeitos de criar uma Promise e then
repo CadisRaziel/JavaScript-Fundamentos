@@ -1,0 +1,85 @@
+//uma promisse é uma function, e quando criamos uma nova promise ele vira um objeto
+
+// p será um objeto
+let p = new Promise(function (cumprirPromesa) {
+    cumprirPromesa(3) //só pode passar um unico valor
+        
+}) 
+
+p.then(function(valor) { //aqui vai apresendar o "3" de cumprirPromesa
+    console.log(valor)
+})
+
+//==========================
+//pegando mais de 1 valor (para isso e necessario criar objeto !!!)
+let s = new Promise(function (cumprirPromesa2) {
+    //para poder incluir mais de 1 valor eu preciso criar um objeto
+    cumprirPromesa2 ({
+        x: 3,
+        y: 4
+    })
+})
+s.then(function(valor2) { //o valor2 ja vai conseguir pegar os 2 valores de uma só vez
+    console.log(valor2)
+
+    //para pegar o valor separado basta colocar .x ou .y
+    console.log(valor2.x)
+    console.log(valor2.y)
+})
+
+
+//============================
+//posso colocar um array
+let i = new Promise(function (cumprirPromesa3) {
+    cumprirPromesa3(['Vitor', 'Gi', 'Ariella'])
+})
+
+i.then(valor3 => console.log(valor3)) //quando é apenas 1 parametro posso colcoar como arrow function !!
+
+
+//============================
+//posso chamar o then varias vezes
+let k = new Promise(function (cumprirPromesa3) {
+    cumprirPromesa3(['Vitor', 'Gi', 'Ariella'])
+})
+
+k.then(valor3 =>  valor3[0]) //pegando o 1 valor do elemento do array
+ //.then(valor3 => console.log(valor3)) //mostra o 1 nome
+ .then(primeiro => primeiro[0]) //pegando a 1 letra
+ //.then(letra => console.log(letra)) //mostrando a 1 letra
+ .then(letrinha => letrinha.toLowerCase()) //deixando a primeira letra com letra minuscula
+ .then(letraMinuscula => console.log(letraMinuscula)) //apresentando a letra minuscula
+
+//============================
+//posso armazenar as propriedades dentro de uma função tornando mais facil o then
+function primeiroNome(array) {
+    return array[0]
+}
+
+function primeiraLetra(string) {
+    return string[0]
+}
+
+//posso fazer todas funções em arrow function !!
+const letraMinuscula = letra => letra.toLowerCase()
+
+//criando as funções eu nao preciso colocar uma string como let p
+//e posso chamar os then logo em seguida
+new Promise(function (resolve) {
+    resolve(['Vitor', 'Gi', 'Ariella'])
+})
+
+
+ .then(primeiroNome) //vai executar 1º esse
+ .then(primeiraLetra) //vai executar 2º esse
+ .then(letraMinuscula) //vai executar 3º esse
+ .then(console.log) //ele vai executar os 3 acima e mostrar o resultado 
+
+ //para executar um de cada vez pasta fazer isso 
+//   .then(primeiroNome) 
+//   .then(console.log)
+//   .then(primeiraLetra) 
+//   .then(console.log)
+//   .then(letraMinuscula) 
+//   .then(console.log) 
+ 
