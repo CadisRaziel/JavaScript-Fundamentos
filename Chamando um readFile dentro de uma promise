@@ -1,0 +1,27 @@
+//desafio (o desafio vai pegar o que tem dentro de dados.txt e apresentar para nós aqui)
+
+const fs = require('fs');
+const path = require('path');
+
+function lerArquivo(caminho) {
+    return new Promise(resolve => {
+        fs.readFile(caminho, function(_, conteudo) {
+            resolve(conteudo.toString())
+        })
+    })
+}
+
+
+const caminho = path.join(__dirname, 'dados.txt')
+lerArquivo(caminho)
+    .then(conteudo => console.log(conteudo))
+
+//posso pegar apenas uma linha
+lerArquivo(caminho)
+    .then(conteudo => conteudo.split('\n'))
+    .then(linha => console.log(linha[1]))
+    
+    //posso por texto
+    .then(linhas2 => linhas2.join(','))
+    .then(conteudo => `O valor final é : ${conteudo}`)
+    .then(console.log)
