@@ -1,0 +1,29 @@
+//chamando varias promises de uma vez
+//e chamando o then só quando todas as promise forem resolvidas 
+
+function gerarNumerosEntre(min, max, tempo) {
+    if (min > max) [max, min] = [min, max]
+    return new Promise(resolve => {
+        setTimeout(function () {
+            const fator = max - min + 1
+            const aleatorio = parseInt(Math.random() * fator) + min
+            resolve(aleatorio)
+        }, tempo)
+    })
+}
+
+//imagine que quero gerar 10 numeros aleatorios
+//quanto todos os segundos estiver contados ai ele mostra o resultado
+//exemplo o 5000 é o maior, então só a hora que executar o 5000 é que vai apresentar o resultado
+function gerarVariosNumeros() {
+    return Promise.all([
+        gerarNumerosEntre(1, 60, 4000),
+        gerarNumerosEntre(1, 60, 1000),
+        gerarNumerosEntre(1, 60, 5000),
+        gerarNumerosEntre(1, 60, 3000),
+        gerarNumerosEntre(1, 60, 100),    
+        
+    ])
+}
+gerarVariosNumeros()
+    .then(numeros => console.log(numeros))
