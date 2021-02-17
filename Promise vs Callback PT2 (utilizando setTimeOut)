@@ -1,0 +1,36 @@
+//obs = setTimeout a gente passa uma function como parametro (executa uma vez só)
+//obs = setInterval fica executando de tantos em tantos segundos ou minutos ou horas como definir
+
+
+//esse exemplo é uma callback dentro de outra callback dentro de outra callback
+setTimeout(function () {
+    console.log('Executando callback..')
+
+
+    //quando eu defino outra callback aqui abaixo e coloco 2 segundos tambem ele faz o seguinte
+    //espera 2 segundos e executa a primeira e espera 2 segundos e executa a segunda 
+    setTimeout(function () {
+        console.log('Executando callback..')
+
+
+        setTimeout(function () {
+            console.log('Executando callback..')
+
+        }, 2000)
+    }, 2000)
+}, 2000) //2000 milesegundos ele executa o conteudo da função (ou seja ele conta até 2 e executa)
+
+//===================================================================================================
+
+//usando promise !! (veja a diferença)
+function esperarPor(tempo = 2000) {
+    return new Promise(function (resolve) {
+        setTimeout(function () {
+            console.log('Só para ver a promise')
+            resolve()
+        }, tempo) //depois que passar o tempo de 2 segundos ele chama o resolve()
+    })
+}
+esperarPor()
+.then(() => esperarPor())
+.then(() => esperarPor())
