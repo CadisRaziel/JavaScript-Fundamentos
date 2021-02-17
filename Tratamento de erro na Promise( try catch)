@@ -1,0 +1,45 @@
+//antes de iniciar lembre-se o catch deve estar no final de todos os then !!!
+
+
+//tratamento de erros no promise
+
+function functionarOuNao(valor, chanceErro) {
+    return new Promise((resolve, reject) => {
+        if (Math.random() < chanceErro) {
+            reject('Ocorreu um erro!')
+        } else {
+            resolve(valor)
+        }
+    })
+}
+
+functionarOuNao('testando....', 0.9) //0.1 chance de erro do then chamar o erro (0.1 = 10% de chance)
+    .then(v => console.log(`Valor: ${v}`))
+    .catch(err => console.log(`Erro: ${err}`)) //tratando o erro (geralmente a gente coloca na ultima posição)
+    //OBS: o erro pode ocorrer tanto em erro de função ou metodo quanto no erro de escrita de codigo
+    .then(() => console.log('FIM'))//depois do catch não da para por mais codigo, o que podemos por é apenas uma mensagem
+
+
+    //posso em um then tratar o erro (para ser bem especifico mesmo, porém o catch nao sera chamado !! "lembre-se que abaixo os valores ficarao invalidos !!")
+    .then(valor => consol.log(valor), err => console.log(`Erro especifico: ${err}`))
+
+
+//posso colocar try e catch tambem
+function functionarOuNao1(valor, chanceErro) {
+    return new Promise((resolve, reject) => {
+        try {            
+            con.log('teste') //o erro vai ocorrer aqui, para teste !
+            if (Math.random() < chanceErro) {
+                reject('Ocorreu um erro!')
+            } else {
+                resolve(valor)
+            }
+        } catch (e) {
+            reject(e)
+        }
+    })
+}
+
+functionarOuNao1('testando....', 0.9) //0.1 chance de erro do then chamar o erro (0.1 = 10% de chance)
+    .then(v => console.log(`Valor: ${v}`))
+    .catch(err => console.log(`Error, cuidado: ${err}`)) //repare que o catch vai ser tratado aqui quando der erro !!!
