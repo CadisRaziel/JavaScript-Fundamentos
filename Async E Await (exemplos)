@@ -1,0 +1,68 @@
+//await só pode ser usada quando o async é usado primeiro !!
+//OBS: por traz de um ASYNC / AWAIT tem que existir um PROMISE (POIS ELES VAO RETORNAR UMA PROMISE !!)
+
+function esperarPor(tempo = 2000) {
+    return new Promise(function (resolve) {
+        setTimeout(() => resolve(), tempo) //depois que passar o tempo de 2 segundos ele chama o resolve()
+    })
+}
+
+//sem async / await
+// esperarPor(2000)
+//     .then(() => console.log('Executando 1......'))
+//     .then(esperarPor)
+//     .then(() => console.log('Executando 2......'))
+//     .then(esperarPor)
+//     .then(() => console.log('Executando 3......'))
+
+
+//usando async / await 
+async function executar() {
+    
+    await esperarPor(1500) //primeiro executa essa linha e só vai pra proxima quando terminar
+    console.log('Async/Await 1')
+
+    await esperarPor(1500) //depois executa essa linha e só vai pra proxima quando terminar
+    console.log('Async/Await 2')
+
+    await esperarPor(1500) //e no final executa essa linha e só vai pra proxima se tiver
+    console.log('Async/Await 3')
+}
+executar()
+
+//===============================================================================
+//outro exemplo
+
+function esperarPor1(tempo = 2000) {
+    return new Promise(function (resolve) {
+        setTimeout(() => resolve(), tempo) //depois que passar o tempo de 2 segundos ele chama o resolve()
+    })
+}
+
+
+
+function retornarValor() {
+    return new Promise(resolve => {
+        setTimeout(() => resolve(10), 5000)
+    })
+}
+
+async function exibirValor(){
+
+    let valor = await retornarValor()
+
+    await esperarPor1(1500)
+    console.log(`Async / Await ${valor}`)
+
+    await esperarPor1(1500)
+    console.log(`Async / Await ${valor +1}`)
+
+    await esperarPor1(1500)
+    console.log(`Async / Await ${valor +2}`)
+
+    //para eu apresentar um valor sem estar no await e que execute no final de tudo eu coloco ele aqui
+    return valor + 3
+}
+exibirValor().then(console.log) //e coloco .then(console.log) aqui !!
+
+//observação: quando eu nao colocar async e await eu vou usar o .then !
