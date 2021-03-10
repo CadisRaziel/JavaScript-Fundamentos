@@ -1,0 +1,68 @@
+//Escopo
+//let = Global, local e de bloco
+//var = Global e local
+
+//exemplos com var
+var nome = 'vitor'//global
+
+//a var fora de qualquer função eu consigo acessa-la dentro das funções e fora das funções
+//então ela é var global !
+
+function func1(){
+    var sobrenome = 'bz'//local
+    console.log(`Oi ${nome} ${sobrenome}`)
+}
+
+function func2(){
+    console.log(`Oie ${nome}`) //se eu tentar passar sobrenome aqui dentro do console.log vai dar um erro
+    //porque quando eu coloco um var dentro de uma função apenas a função que ela esta pode acessar a var
+    //então ela fica local !
+} 
+
+func1()
+func2()
+console.log(`Ola ${nome}`)
+
+//=======================================================================================================
+
+//exemplo com let
+let nome2 = 'Gi'//global
+
+
+//let tambem tem o escopo global sendo possivel acessa-la dentro de uma função e fora de uma função
+
+function func3() {
+    let sobrenome2 = 'bz'//local
+    console.log(`Oi ${nome2} ${sobrenome2}`)
+}
+
+ function func4() {
+     console.log(`Oi ${nome2}`)//se eu tentar passar sobrenome aqui dentro do console.log vai dar um erro
+    //porque quando eu coloco um let dentro de uma função apenas a função que ela esta pode acessar o let
+    //então ela fica local !
+}
+
+func3()
+func4()
+console.log(`Ola ${nome2}`)
+
+
+//nesse exemplo vou declarar um let global e um let dentro de um bloco{}
+let a = 10 //let global
+let testar = true
+
+//o let tem escopo de bloco {}
+//{}, if(){} else(){}, while(){}, for(){} etc...
+
+if(testar) {
+    let b = 20 //let do bloco{}
+    console.log(a + b)
+}
+
+//veja se eu tentar acesar let b fora do bloco{}
+console.log(a + b) //vai dar erro pois o let b esta dentro do {}
+//resumindo, quando eu coloco um let dentro do bloco{} eu não posso usar ele fora desse bloco{}
+
+
+
+//RESUMINDO = cuidado com o VAR, sempre utilize LET e CONST o VAR é só em questões realmente especificas e delicadas
