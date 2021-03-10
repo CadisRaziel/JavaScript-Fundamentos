@@ -1,0 +1,21 @@
+let nome = "Vitor"
+let idade = 28
+let empresa = "udemy"
+
+
+//antes era assim
+let user = {
+    nome: nome,
+    idade: idade,
+    empresa: empresa
+}
+
+//lembrando que só funciona com var let e const
+//agora o correto é assim 
+let user = {
+   nome,
+   idade,
+   empresa
+}
+
+console.log(user)
