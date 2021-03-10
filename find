@@ -1,0 +1,37 @@
+//find achar um unico registro dentro de um array
+
+
+let vitor = {
+    nome: "vitor brussolo zerbato",
+    empresa: "udemy",
+    salario: 1000,
+}// verificar() = true, porque eu passei que a condição seria "vitor brussolo zerbato"
+
+let gi = {
+    nome: "Giovanna",
+    empresa: "gr",
+    salario: 5000
+}// verificar() = false
+
+let ari = {
+    nome: "Ariella",
+    empresa: "tete",
+    salario: 2000
+}// verificar() = false
+
+let users = [vitor, gi, ari]
+
+
+//ele vai procurar em todos os arrays, o primeiro que ele encontrar(vai dar verdadeiro) e vai nos retornar
+let use = users.find(usuario => usuario.nome === "vitor brussolo zerbato" )
+console.log(use)
+
+let use1 = users.find(usuario => usuario.empresa === "gr" )
+console.log(use1)
+
+
+//repare nessa function o find ele é verdadeiro ou falso então ele vai retornar o primeiro verdadeiro
+//como a gi esta antes da ari, a gi que vai aparecer apenas, mesmo eu colocando >=2000
+//ele só mostra o primeiro resultado verdadeiro os outros mesmo esta dentro da proposta da condição não sera retornado
+let use2 = users.find(usuario => usuario.salario >= 2000)
+console.log(use2)
