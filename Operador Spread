@@ -1,0 +1,19 @@
+//OperadorSpread = Pega campos de um objeto e cola em outro objeto
+
+
+
+let nome = "vitor"
+let idade = 28
+let empresa = {    
+    cidade: "SRJP",
+    site: "udemy.com.br",
+    email: "udemy@hotmail.com"
+}
+
+let user = {
+    nome,
+    idade, 
+    ...empresa //os 3 pontos ... é o operador Spread, ele vai copiar o objeto empresa e colar no objeto user
+}
+
+console.log(user)
