@@ -1,0 +1,25 @@
+//Destructuring = Permite recuperar campos dentro de um json e criar variaveis a partir desses campos
+
+let user = {
+    nome: "Udemy",
+    prof: "Vitor",
+    empresa: "Guia do programador",
+    curso: "NodeJs"
+}
+
+//antes do destructuring
+// let nome = user.nome
+// let curso = user.curso
+// console.log(nome)
+// console.log(curso)
+
+
+//agora com destructuring
+let { nome } = user
+console.log(nome)
+
+//ou 
+
+let { prof, empresa} = user
+console.log(prof)
+console.log(empresa)
