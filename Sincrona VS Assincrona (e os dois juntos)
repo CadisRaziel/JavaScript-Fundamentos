@@ -1,0 +1,51 @@
+//Sincrona
+
+//exemplo
+//o codigo sincrono ele faz etapa por etapa, exemplo 
+
+
+//CheckEmail() -> primeiro ele checa o email pra ver se ja existe, só depois de fazer isso ele vai pra proxima etapa
+//Hash() -> ele verifica o hash, terminando isso ele vai para proxima etapa \/
+//Upload() -> ele verifica a foto e faz o upload, assim que termina ele vai pra proxima \/
+//Save() -> ele salva os dados na database, assim que termina ele pula pra proxima etapa \/
+//Email() -> aqui ele envia o email de verificação
+
+
+//Repare que ele só passa para a proxima etapa quando a que ele esta é concluida, se nao for concluida ele não vai para a proxima etapa
+//isso é o Sincrona
+//OBSERVAÇÂO o sistema SINCRONA é muito lento em grandes aplicações tomar cuidado !!!!
+
+
+//==============================================================================
+
+//Assincrona ela é executada independente da ordem diferente do Sincrona que tem que espera uma terminar para a outra começar
+
+//exemplo
+//A() -> a função A pode demorar um pouco mais logo envia o processo
+//B() -> a função B pode terminar o processo primeiro
+//C() -> a função C terminou primeiro que as outras
+
+//Resumindo independente da ordem que estiver ele não trava o processo esperando uma terminar para ir para o proximo
+// todos processos são realizados juntos assim não bloqueando o fluxo
+
+//NEM TUDO PODE SER ASSINCRONA, sabe porque, imagine o formulario la em cima, eu nao posso da Save() no usuario sem checar o CheckEmail(), sem fazer o Hash() no
+//Então fica assim
+
+//Sincrona 
+//CheckEmail
+//Hash()
+//Save()
+
+//Assincrona (ao mesmo tempo que o Sincrona esta ralizando o trabalho, o Assincrona esta realizando essas tarefas em background)
+//Upload()
+//Email()
+
+
+//formas de trabalhar com programação assincrona 
+//Async/Await
+//Promise
+//Callbacks
+
+//Promisse é uma evolução de callbacks e Async/Await é uma evolução de promisse
+
+//IMPORTANTE PODEMOS MISTURAR "SINCRONA" COM "ASSINCRONA"
