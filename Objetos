@@ -1,0 +1,83 @@
+// Classes
+
+//Metodos e atributos
+//Atributos de um jogo: Titulo, Genero, produtora, preço (ATRIBUDO È O QUE ELE TEM !!! SÃO VARIAVEIS)
+//Metodo de um jogo: Abrir, carregar, fechar, atualizar, executar (METODO È O QUE ELE FAZ !!! SÃO FUNÇÔES)
+
+//Atributos de um filme: Titulo, ano, Sinopose, genero, diretor, atores[], duração
+//Metodos de um filme: Reproduzir, pausar, avançar, fechar
+
+
+//Abstração
+//São os aspectos essenciais, as caracteristicas principais exp: uma arvore só de olhar o galho ja sabemos que é uma arvore
+//resumindo, retirar as principais caracteristicas e os metodos dele(o que ele faz)
+
+
+
+//LEMBRE-SE A CLASSE È UM FORMULARIO, e o OBJETO é o que preenche esse formulario
+
+class Filme {
+    constructor(){
+        this.titulo = ''
+        this.ano = 0
+        this.genero = ''
+        this.diretor = ''
+        this.ator = []
+        this.duracao = 0     
+    }
+    Reproduzir(){
+        console.log("Reproduzindo o video >")
+    }
+
+    Pausar(){
+        console.log("Pausando o video || ")
+    }
+
+    Avançar(){
+        console.log("Avançar o video >> ")
+    }
+
+    Fechar(){
+        console.log("Fechar o video X ")
+    }
+}
+
+
+//objetos
+let vingadores = new Filme()
+vingadores.titulo = "Vingadores"
+vingadores.ano = 2021
+vingadores.genero = "Ação-Fantasia"
+vingadores.diretor = "Irmaos russo"
+vingadores.ator = ['Homen de ferro', 'Hulk', 'Capitao américa', 'Thor']
+vingadores.duracao = "260 minutos"
+console.log(`
+Titulo do filme: ${vingadores.titulo}
+Ano: ${vingadores.ano}
+Genero: ${vingadores.genero}
+Diretor: ${vingadores.diretor}
+Atores: ${vingadores.ator}
+Duração: ${vingadores.duracao}
+`)
+vingadores.Reproduzir()
+
+
+// class constructor com parametros
+class Filme2 {
+    constructor(titulo, ano, genero, diretor, duracao){
+        this.titulo = titulo
+        this.ano = ano
+        this.genero = genero
+        this.diretor = diretor
+        this.duracao = duracao
+        this.ator = []
+    }
+}
+let vingadores2 = new Filme2("Vingadores2", 2020, "Ação", "Irmaos doidos", "220 minutos")
+console.log(`
+Titulo do filme: ${vingadores2.titulo}
+Ano: ${vingadores2.ano}
+Genero: ${vingadores2.genero}
+Diretor: ${vingadores2.diretor}
+Duração: ${vingadores2.duracao}
+`)
