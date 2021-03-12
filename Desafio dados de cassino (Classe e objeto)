@@ -1,0 +1,34 @@
+//Desafio dos dados
+
+//Sistema de cassino
+//Varios tipos de dados
+//Rolar dados
+
+
+class Dados{
+    constructor(faces) {
+        this.faces = faces
+    }
+
+    Rolar(){
+        console.log(`Resultado dos dados: ${this.RolarDados (1, this.faces)}`)     
+    }
+
+    RolarDados(min, max){
+        min = Math.ceil(min)
+        max = Math.floor(max)
+        return Math.floor(Math.random() * (max - min +1 )) + min     
+    }
+
+}
+
+let D6 = new Dados(6)
+let D12 = new Dados(12)
+let D100 = new Dados(100)
+
+D6.Rolar()
+D12.Rolar()
+D100.Rolar()
+
+
+
