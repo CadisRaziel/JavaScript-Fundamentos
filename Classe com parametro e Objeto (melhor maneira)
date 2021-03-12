@@ -1,0 +1,39 @@
+class Filme {
+    constructor(titulo, ano, genero, diretor, duracao){
+        this.titulo = titulo
+        this.ano = ano
+        this.genero = genero
+        this.diretor = diretor
+        this.duracao = duracao
+        this.ator = []
+    }
+    Reproduzir(){
+        console.log("Reproduzindo o video >")
+    }
+
+    Pausar(){
+        console.log("Pausando o video || ")
+    }
+
+    Avançar(){
+        console.log("Avançar o video >> ")
+    }
+
+    Fechar(){
+        console.log("Fechar o video X ")
+    }
+
+
+    ficha(){
+        console.log(`Título ${this.titulo}
+             Ano: ${this.ano}
+             Genero: ${this.genero}`)
+             this.Reproduzir() //posso por funções dentro de outras funções usando o this.
+    }
+}
+
+
+let vingadores = new Filme("Vingadores", 2021, "Ação", "Irmaos doidos", "220 minutos")
+vingadores.ficha() //para apresentar as informações em um metodo
+
+
