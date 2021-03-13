@@ -1,0 +1,67 @@
+class Animal{
+    constructor(nome, idade, preco){
+        this.nome = nome
+        this.idade = idade
+        this.preco = preco
+    }
+
+    ChecarEstoque(){
+        return 10
+    }
+
+    MetodoQualquer(){
+        console.log("Esse metodo faz parte da classe mae")
+    }
+}
+
+
+//tudo que tem na classe animal pode ser usada na classe cachorro por conta do "extends"
+class Cachorro extends Animal{
+
+    //copiando/alterando o constructor e se quisermos podemos colocar mais coisas 
+    //esse constructor só vai se aplicar a classe cachorro
+    constructor(nome, idade, preco, raca, peso){
+        super(nome, idade, preco)
+        this.raca = raca
+        this.peso = peso
+    }
+
+
+
+    //posso deixar a classe vazia e mesmo assim ele vai ter todos os metodos e propriedades que a classe animal
+    Latir(){ //o metodo criado aqui só pertence ao cachorro pois é classe filha
+        console.log("AU AU")
+    }
+
+    //posso modificar metodo da classe mae
+    ChecarEstoque(){
+        console.log("Na loja temos 20 dogs")
+    }
+
+    MetodoQualquer(){
+        console.log("Uma classe de dogs")
+        //super faz referencia a classe mae
+        super.MetodoQualquer() //para copiar a função da classe mae, podemos colocar mais coisas aqui dentro se quiser
+        console.log("Podemos colocar mais coisas aqui nesse metodo copiado da classe mae")
+    }
+}
+
+
+
+let dog = new Cachorro("Dogão", 5, "R$ 250,00", "Pug", "10kg")
+dog.ChecarEstoque()
+dog.Latir()
+dog.MetodoQualquer()
+console.log(dog.raca)
+
+
+
+//classe de multiplos niveis (não recomendado usar, vira bagunça)
+
+class PastorAlemao extends Cachorro{
+
+}
+
+class PastorAlemaoMacho extends PastorAlemao{
+    
+}
