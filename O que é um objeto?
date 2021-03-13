@@ -1,0 +1,13 @@
+// Classes
+
+//Metodos e atributos
+//Atributos de um jogo: Titulo, Genero, produtora, preço (ATRIBUDO È O QUE ELE TEM !!! SÃO VARIAVEIS)
+//Metodo de um jogo: Abrir, carregar, fechar, atualizar, executar (METODO È O QUE ELE FAZ !!! SÃO FUNÇÔES)
+
+//Atributos de um filme: Titulo, ano, Sinopose, genero, diretor, atores[], duração
+//Metodos de um filme: Reproduzir, pausar, avançar, fechar
+
+
+//Abstração
+//São os aspectos essenciais, as caracteristicas principais exp: uma arvore só de olhar o galho ja sabemos que é uma arvore
+//resumindo, retirar as principais caracteristicas e os metodos dele(o que ele faz)
