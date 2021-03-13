@@ -1,0 +1,65 @@
+
+//components
+class LerArquivo{
+    Ler(caminho){
+        return "Conteudo do arquivo"
+    }
+}
+
+class EscreverArquivo{
+    Escrever(arquivo, conteudo){
+        console.log("Conteudo escrito")
+    }
+}
+
+class CriarArquivo{
+    Criar(nome){
+        console.log("Arquvio criado")
+    }
+}
+
+class DeletarArquivo{
+    Deletar(nome){
+        console.log("Deletando arquivo")
+    }
+}
+
+
+//fazendo a composição 
+class ManipuladorDeArquivo{
+    constructor(name){
+        this.arquivo = name
+        this.lerArquivo = new LerArquivo()
+        this.escreverArquivo = new EscreverArquivo()
+        this.criarArquivo = new CriarArquivo()
+        this.deletarArquivo = new DeletarArquivo()
+    }
+}
+
+
+//imagine que eu preciso criar outra classe alguns anos depois em que o usuario vai salvar os dados é só fazer assim
+class GerenciadorDeUsuarios{
+    constructor(){
+        this.criarArquivo = new CriarArquivo()
+        this.escreverArquivo = new EscreverArquivo()
+    }
+
+    SalvarListaDeUsuarios(lista){
+        this.Criar.criarArquivo("usuario.txt")
+        this.Escrever.escreverArquivo("usuario.text", lista)
+    }
+}
+
+let manipulador = new ManipuladorDeArquivo("Meu arquivo.txt")
+manipulador.Ler.lerArquivo()
+manipulador.Escrever.escreverArquivo()
+manipulador.Criar.criarArquivo()
+manipulador.Deletar.deletarArquivo()
+
+
+let usuarios = new GerenciadorDeUsuarios([
+    "Vitor", "gi"
+])
+
+
+//Obs: Veja que existem duas classes diferentes mais com os mesmos componentes (isso é reutilizar codigo)
