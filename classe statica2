@@ -1,0 +1,21 @@
+//Metodo statico = Permite que acesse metodos de uma classe sem que precise criar um objeto(instanciar)
+
+class Calculadora {
+    
+    static Somar(a, b){
+        console.log(a + b)
+    }
+
+    static Sub(a, b){
+        console.log(a - b)
+    }
+}
+
+//colocando static antes da função podemos acessar ela sem precisar instanciar tipo "let calculadora = new Calculadora()"
+//é só colocar o nome da classe e passar os parametros
+Calculadora.Somar(10, 10)
+Calculadora.Sub(5, 3)
+
+// let calculadora = new Calculadora() // = instanciar
+// calculadora.Somar(1, 1)
+// calculadora.Sub(20, 10)
